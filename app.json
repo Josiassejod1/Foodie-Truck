@@ -1,0 +1,12 @@
+{
+  "name": "FoodieTruck",
+  "displayName": "FoodieTruck",
+  "expo": {
+    "name": "FoodieTruck",
+    "slug": "FoodieTruck",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
