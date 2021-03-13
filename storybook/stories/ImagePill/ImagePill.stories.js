@@ -13,5 +13,7 @@ imageStories.parameters = {
 }
 imageStories.add('image pill', () => (<CenterView>
     <ImagePill width={101} height={97} src="https://picsum.photos/200/300" />
+    <ImagePill width={200} height={200} src="https://picsum.photos/200/300" />
+    <ImagePill width={200} height={97} src="https://picsum.photos/200/300" />
 </CenterView>));
 
