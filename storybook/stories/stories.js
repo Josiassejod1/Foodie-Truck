@@ -1,0 +1,1 @@
+import './ImagePill/ImagePill.stories';
