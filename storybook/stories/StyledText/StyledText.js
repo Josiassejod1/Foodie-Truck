@@ -18,7 +18,7 @@ export default function StyledText(props) {
     if (props.size == "m") { style = styledText.medium }
     if (props.size == "l") { style = styledText.categoryText }
     if (props.size == "header") { style = styledText.headerText }
-    if (props.size == "subheader") { style = styledText.subheaderText }
+    if (props.size == "subtitle") { style = styledText.subheaderText }
     return <Text style={style}>{props.text}</Text>
 }
 
