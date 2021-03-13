@@ -31,24 +31,21 @@ const styledText = {
     smallWarning: {
         color: "#C90000",
         fontSize: 12,
-        fontWeight: 400,
         fontFamily: 'Poppins-Light'
     },
     medium: {
         color: "black",
-        fontWeight: 600,
+        fontWeight: "600",
         fontSize: 12,
         fontFamily: 'Poppins'
     },
     grayedText: {
         color: "#AAA9A9",
-        fontWeight: 400,
         fontSize: 14,
         fontFamily: 'Poppins-Light'
     },
     categoryText: {
         color: "#0A3364",
-        fontWeight: 800,
         fontFamily: 'Poppins-Medium',
         fontSize: 16
     },
