@@ -17,5 +17,7 @@ styledText.add('styled text', () => (<CenterView>
     <StyledText size="xtra-m" text="Hello World" />
     <StyledText size="m" text="Hello World" />
     <StyledText size="l" text=" Hello World" />
+    <StyledText size="header" text="Hello World" />
+    <StyledText size="subheader" text=" Hello World" />
 </CenterView>));
 
