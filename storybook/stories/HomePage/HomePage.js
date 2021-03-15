@@ -6,6 +6,7 @@ import ImagePill from './../ImagePill/ImagePill';
 import StyledText from '../StyledText/StyledText';
 import _ from "lodash";
 import ImagePillWithText from '../ImagePillWithText/ImagePillWithText';
+import LocationSearchBar from '../LocationSearchBar/LocationSearchBar';
 
 
 export function HomePage(props) {
@@ -89,10 +90,14 @@ export function HomePage(props) {
     };
     return (
         <ScrollView>
-            <View style={{ padding: 20 }}>
-                <StyledText size="header">
-                    Hungry?
-                </StyledText>
+            <View style={{ padding: 25 }}>
+                <View style={{
+                    marginBottom: 5
+                }}>
+                    <StyledText size="header">
+                        Hungry?
+                    </StyledText>
+                </View>
                 <StyledText size="subtitle">
                     Find The Best Food Trucks
                 </StyledText>
@@ -100,14 +105,18 @@ export function HomePage(props) {
                     Near You
                 </StyledText>
             </View>
-            <View>
-                <ImageBackground source={{ url: "https://picsum.photos/200/300" }} style={{
-                    height: 217,
-                    marginBottom: 32
-                }} />
-            </View>
-            <View style={{ padding: 20 }}>
-                <StyledText size="l">
+            <ImageBackground source={{ url: "https://picsum.photos/414/274" }} style={{
+                height: 274,
+                width: 414,
+                marginBottom: 32,
+                resizeMode: "cover",
+                justifyContent: "center"
+            }}>
+                <LocationSearchBar />
+            </ImageBackground>
+
+            <View style={{ padding: 25 }}>
+                <StyledText size="subtitle">
                     Categories
                 </StyledText>
                 <ScrollView
@@ -121,8 +130,8 @@ export function HomePage(props) {
                     <CategoryPill title="Indian" />
                     <CategoryPill title="Cajun" />
                 </ScrollView>
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingRight: 20 }}>
-                    <StyledText size="l">
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingRight: 25 }}>
+                    <StyledText size="subtitle">
                         Top Rated
                     </StyledText>
                     <StyledText size="xtra-m">
@@ -130,6 +139,10 @@ export function HomePage(props) {
                     </StyledText>
                 </View>
                 <SectionList
+                    contentContainerStyle={{
+                        padding: 0,
+                        margin: 0
+                    }}
                     horizontal={true}
                     showsHorizontalScrollIndicator={false}
                     ItemSeparatorComponent={FlatListItemSeparator}
@@ -147,129 +160,59 @@ export function HomePage(props) {
                     )}
                     keyExtractor={(item, index) => index}
                 />
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingRight: 25 }}>
+                    <StyledText size="subtitle">
+                        New Trucks
+                    </StyledText>
+                    <StyledText size="xtra-m">
+                        View all
+                    </StyledText>
+                </View>
+                <SectionList
+                    horizontal={true}
+                    showsHorizontalScrollIndicator={false}
+                    ItemSeparatorComponent={FlatListItemSeparator}
+                    sections={[
+                        { title: 'New Trucks', data: NewTrucksData },
+                    ]}
+                    renderItem={({ item }) => (
+                        // Item for the FlatListItems
+                        <ImagePillWithText
+                            name={item.name}
+                            category={item.category}
+                            location={item.category}
+                            src={item.src}
+                        />
+                    )}
+                    keyExtractor={(item, index) => index}
+                />
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingRight: 25 }}>
+                    <StyledText size="subtitle">
+                        All Trucks
+                    </StyledText>
+                    <StyledText size="xtra-m">
+                        View all
+                    </StyledText>
+                </View>
+                <SectionList
+                    horizontal={true}
+                    showsHorizontalScrollIndicator={false}
+                    ItemSeparatorComponent={FlatListItemSeparator}
+                    sections={[
+                        { title: 'All Trucks', data: AllTrucksData },
+                    ]}
+                    renderItem={({ item }) => (
+                        // Item for the FlatListItems
+                        <ImagePillWithText
+                            name={item.name}
+                            category={item.category}
+                            location={item.category}
+                            src={item.src}
+                        />
+                    )}
+                    keyExtractor={(item, index) => index}
+                />
             </View>
-
-            {/* <StyledText size="l">
-                Categories
-            </StyledText>
-
-            <ScrollView
-                contentContainerStyle={{ flexGrow: 1, marginBottom: 41 }}
-                horizontal={true}
-                showsHorizontalScrollIndicator={false}
-                automaticallyAdjustContentInsets={false}
-                pagingEnabled>
-                <CategoryPill title="French" />
-                <CategoryPill title="Greek" />
-                <CategoryPill title="Indian" />
-                <CategoryPill title="Cajun" />
-            </ScrollView>
-            <StyledText size="l">
-                Top Rated
-            </StyledText>
-            <ScrollView
-                flexGrow={1}
-                flex={1}
-                horizontal={true}
-                automaticallyAdjustContentInsets={false}
-                showsHorizontalScrollIndicator={false}
-                pagingEnabled>
-                <ImagePillWithText
-                    name="Tony's Taco"
-                    category="Mexican"
-                    location="15 Min Away"
-                    src="https://picsum.photos/200/300"
-                />
-                <ImagePillWithText
-                    name="Tony's Taco"
-                    category="Mexican"
-                    location="15 Min Away"
-                    src="https://picsum.photos/200/300"
-                />
-                <ImagePillWithText
-                    name="Tony's Taco"
-                    category="Mexican"
-                    location="15 Min Away"
-                    src="https://picsum.photos/200/300"
-                />
-                <ImagePillWithText
-                    name="Tony's Taco"
-                    category="Mexican"
-                    location="15 Min Away"
-                    src="https://picsum.photos/200/300"
-                />
-            </ScrollView>
-            <StyledText size="l">
-                New Trucks
-            </StyledText>
-            <ScrollView
-                flexGrow={1}
-                flex={1}
-                horizontal={true}
-                automaticallyAdjustContentInsets={false}
-                showsHorizontalScrollIndicator={false}
-                pagingEnabled>
-                <ImagePillWithText
-                    name="Tony's Taco"
-                    category="Mexican"
-                    location="15 Min Away"
-                    src="https://picsum.photos/200/300"
-                />
-                <ImagePillWithText
-                    name="Tony's Taco"
-                    category="Mexican"
-                    location="15 Min Away"
-                    src="https://picsum.photos/200/300"
-                />
-                <ImagePillWithText
-                    name="Tony's Taco"
-                    category="Mexican"
-                    location="15 Min Away"
-                    src="https://picsum.photos/200/300"
-                />
-                <ImagePillWithText
-                    name="Tony's Taco"
-                    category="Mexican"
-                    location="15 Min Away"
-                    src="https://picsum.photos/200/300"
-                />
-            </ScrollView>
-            <StyledText size="l">
-                All Trucks
-            </StyledText>
-            <ScrollView 
-                flexGrow={1}
-                flex={1}
-                horizontal={true}
-                automaticallyAdjustContentInsets={false}
-                showsHorizontalScrollIndicator={false}
-                pagingEnabled>
-            <ImagePillWithText
-                name="Tony's Taco"
-                category="Mexican"
-                location="15 Min Away"
-                src="https://picsum.photos/200/300"
-            />
-            <ImagePillWithText
-                name="Tony's Taco"
-                category="Mexican"
-                location="15 Min Away"
-                src="https://picsum.photos/200/300"
-            />
-            <ImagePillWithText
-                name="Tony's Taco"
-                category="Mexican"
-                location="15 Min Away"
-                src="https://picsum.photos/200/300"
-            />
-            <ImagePillWithText
-                name="Tony's Taco"
-                category="Mexican"
-                location="15 Min Away"
-                src="https://picsum.photos/200/300"
-            />
-        </ScrollView>
-        */}
         </ScrollView >
     )
 }

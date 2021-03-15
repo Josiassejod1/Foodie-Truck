@@ -11,7 +11,7 @@ export default function StyledText(props) {
         "Poppins-Light": require('../../../fonts/Poppins-Light.ttf'),
         "Poppins-Regular": require('../../../fonts/Poppins-Regular.ttf'),
         "Poppins-Medium": require('../../../fonts/Poppins-Medium.ttf'),
-        "Poppins-SemiBold": require('../../../fonts/Poppins-SemiBold.ttf'),
+        "Poppins-Bold": require('../../../fonts/Poppins-Bold.ttf'),
     });
     if (props.size == "xtra-sm") { style = styledText.small }
     if (props.size == "sm") { style = styledText.smallWarning }
@@ -52,12 +52,12 @@ const styledText = {
     },
     headerText: {
         color: "#0A3364",
-        fontFamily: 'Poppins-SemiBold',
+        fontFamily: 'Poppins-Bold',
         fontSize: 27,
     },
     subheaderText: {
         color: "#0A3364",
-        fontFamily: 'Poppins-SemiBold',
+        fontFamily: 'Poppins-Bold',
         fontSize: 20,
     }
 }
