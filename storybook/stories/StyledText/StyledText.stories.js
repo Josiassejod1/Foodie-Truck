@@ -12,30 +12,30 @@ styledText.parameters = {
     }
 }
 styledText.add('extra small text', () => (<CenterView>
-    <StyledText size="xtra-sm" text="Hello World" />
+    <StyledText size="xtra-sm">Hello World</StyledText>
 </CenterView>));
 
 
 styledText.add('small text', () => (<CenterView>
-    <StyledText size="sm" text="Hello World" />
+    <StyledText size="sm">Hello World</StyledText>
 </CenterView>));
 
 styledText.add('extra medium text', () => (<CenterView>
-    <StyledText size="xtra-m" text="Hello World" />
+    <StyledText size="xtra-m">Hello World</StyledText>
 </CenterView>));
 
 styledText.add('medium text', () => (<CenterView>
-    <StyledText size="m" text="Hello World" />
+    <StyledText size="m">Hello World</StyledText>
 </CenterView>));
 
 styledText.add('large text', () => (<CenterView>
-    <StyledText size="l" text="Hello World" />
+    <StyledText size="l">Hello World</StyledText>
 </CenterView>));
 
 styledText.add('header text', () => (<CenterView>
-    <StyledText size="header" text="Hello World" />
+    <StyledText size="header">Hello World</StyledText>
 </CenterView>));
 
 styledText.add('subtitle text', () => (<CenterView>
-    <StyledText size="subtitle" text="Hello World" />
+    <StyledText size="subtitle">Hello World</StyledText>
 </CenterView>));

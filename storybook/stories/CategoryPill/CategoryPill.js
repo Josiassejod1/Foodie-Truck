@@ -24,16 +24,16 @@ const style = {
         width: 70,
         height: 43,
         borderRadius: 8,
-        marginRight: 40,
-        marginLeft: 40,
+        marginRight: 8,
+        marginLeft: 8,
         marginTop: 10,
-        paddingTop: 10,
+        paddingTop: 15,
         paddingBottom: 10,
     },
     buttonText: {
         color: 'white',
         textAlign: 'center',
         fontFamily: 'Poppins',
-
+        fontSize: 10
     }
 }
