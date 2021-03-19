@@ -112,7 +112,9 @@ export function HomePage(props) {
                 resizeMode: "cover",
                 justifyContent: "center"
             }}>
-                <LocationSearchBar />
+                <View style={{ marginTop: 100 }}>
+                    <LocationSearchBar />
+                </View>
             </ImageBackground>
 
             <View style={{ padding: 25 }}>

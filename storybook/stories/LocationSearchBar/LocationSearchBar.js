@@ -28,7 +28,7 @@ export default function LocationSearchBar(props) {
             height: 50
         },
         searchBar: {
-            zIndex: 100,
+            zIndex: 1000,
             backgroundColor: "#EFEEEE",
             height: 60,
             borderRadius: 30,
@@ -37,7 +37,6 @@ export default function LocationSearchBar(props) {
             width: 314,
             justifyContent: 'flex-start',
             marginLeft: 5,
-            marginTop: 100
         },
         placeholder: {
             fontFamily: 'Poppins-Light'

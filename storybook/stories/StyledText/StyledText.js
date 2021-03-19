@@ -20,7 +20,7 @@ export default function StyledText(props) {
     if (props.size == "l") { style = styledText.categoryText }
     if (props.size == "header") { style = styledText.headerText }
     if (props.size == "subtitle") { style = styledText.subheaderText }
-    return <Text style={style}>{props.children}</Text>
+    return <Text style={(props.color) ? [style.color, { color: props.color }] : style}>{props.children}</Text>
 }
 
 const styledText = {
