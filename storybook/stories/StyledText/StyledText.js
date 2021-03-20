@@ -1,8 +1,7 @@
 import React from 'react';
 import { Text } from "react-native";
 
-import { useFonts, Poppins } from 'expo-font';
-import { size } from 'lodash';
+import { useFonts } from 'expo-font';
 
 export default function StyledText(props) {
     var style = null;

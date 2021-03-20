@@ -56,7 +56,7 @@ export default function LocationSearchBar(props) {
                     }}>
                         <LocationSvg> </LocationSvg>
                     </View>
-                    <TextInput placeHolderTextColor="#0A3364" style={styles.placeholder} editable placeholder="Location" />
+                    <TextInput placeHolderTextColor="#0A3364" style={styles.placeholder} editable placeholder={props.placeholder ? props.placeholder: "Location"} />
                 </View>
             </View>
         </View>
