@@ -3,8 +3,9 @@ import LocationSearchBar from "../LocationSearchBar/LocationSearchBar";
 import {View, ScrollView } from "react-native";
 import StyledText from '../StyledText/StyledText';
 import CategoryPill from '../CategoryPill/CategoryPill';
+import SearchResult from "../SearchResult/SearchResult";
 
-export default function SearchResult () {
+export default function SearchResultPage () {
     return(
         <ScrollView>
             <View>
@@ -32,7 +33,7 @@ export default function SearchResult () {
                     </ScrollView>
                 </View>
                 <View>
-                    
+                    <SearchResult title={props.title} category={props.category} distance={props.distance} />
                 </View>
             </View>
         </ScrollView>
