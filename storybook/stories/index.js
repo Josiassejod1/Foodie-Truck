@@ -8,3 +8,4 @@ import './PublisherBtn/PublisherBtn.stories';
 import './Button/GenericBtn.stories';
 import './GenericSplashView/GenericSplashView.stories';
 import './PinCode/PinCode.stories';
+import './LocationModal/LocationModal.stories';
