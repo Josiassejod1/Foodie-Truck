@@ -11,7 +11,7 @@ RestaurantCardStory.add('restaurant card', () => (<CenterView>
     src="https://picsum.photos/200/300"
     title="Jacobs"
     category="Italian"
-    miles="2.4 Miles"
+    miles="2.4 mi away"
     time="26 Minutes"
     />
 </CenterView>));
