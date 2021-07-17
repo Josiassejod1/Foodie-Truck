@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import CenterView from '../CenterView';
-import StyledText from '../StyledText/StyledText';
 import LocationView from './LocationView';
 
 
