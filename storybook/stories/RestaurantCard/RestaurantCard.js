@@ -38,8 +38,8 @@ export default function RestaurantCard(props) {
                 <StyledText size="sm">  
                     {props.time}
                 </StyledText>
-                <View flexDirection='row' style={{justifyContent:'space-between', paddingLeft: 3}}>
-                    <View style={{paddingTop: 5, paddingLeft: 2}}>
+                <View flexDirection='row' style={{justifyContent:'space-between'}}>
+                    <View style={{paddingTop: 5, paddingRight: 5}}>
                         <Plane></Plane>
                     </View>
                     <StyledText size="sm" color="black">
