@@ -30,7 +30,7 @@ export default function RestaurantCard(props) {
             }} />
             <View>
                 <StyledText size="m" >
-                    {props.title}
+                    {props.name}
                 </StyledText>
                 <StyledText  size="sm" color="black">
                 {props.category}
@@ -39,11 +39,11 @@ export default function RestaurantCard(props) {
                     {props.time}
                 </StyledText>
                 <View flexDirection='row' style={{justifyContent:'space-between'}}>
-                    <View style={{paddingTop: 5, paddingRight: 5}}>
+                    <View style={{paddingTop: 5, paddingRight: 4}}>
                         <Plane></Plane>
                     </View>
                     <StyledText size="sm" color="black">
-                        {props.miles}
+                        {props.location}
                     </StyledText>
                 </View>
                 <View style={{paddingTop: 8}}>
