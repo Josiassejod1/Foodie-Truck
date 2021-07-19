@@ -77,8 +77,8 @@ export default ResultPage = (props) => {
         sections={[
             { data: TopRatedData },
         ]}
-        renderItem={({ item }) => (
-            <CategoryPill title={item.category}  />   
+        renderItem={({ item, index}) => (
+            <CategoryPill title={item.category} selected={index == 0 ? true : false}  />   
         )}
         keyExtractor={(item, index) => index}
         />
