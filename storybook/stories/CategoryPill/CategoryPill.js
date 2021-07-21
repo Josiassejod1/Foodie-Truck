@@ -34,6 +34,9 @@ const style = {
         color: 'white',
         textAlign: 'center',
         fontFamily: 'Poppins',
-        fontSize: 10
+        fontSize: 10,
+        flex: 1, 
+        flexWrap: 'wrap',
+        flexShrink: 1
     }
 }

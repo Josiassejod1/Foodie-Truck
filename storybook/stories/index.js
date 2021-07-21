@@ -9,3 +9,4 @@ import './Button/GenericBtn.stories';
 import './GenericSplashView/GenericSplashView.stories';
 import './PinCode/PinCode.stories';
 import './RestaurantCard/RestaurantCard.stories';
+import './ResultPage/ResultPage.stories';
