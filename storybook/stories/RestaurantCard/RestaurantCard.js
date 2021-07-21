@@ -15,7 +15,7 @@ export default function RestaurantCard(props) {
             borderStyle: "solid", 
             borderRadius: 5, 
             borderWidth: 2, 
-            borderColor: "grey",
+            borderColor: "lightgray",
             flexDirection: 'row',
             padding: 24
         }
