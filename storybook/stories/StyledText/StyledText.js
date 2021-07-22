@@ -20,6 +20,7 @@ export default function StyledText(props) {
     if (props.size == "l") { style = styledText.categoryText }
     if (props.size == "header") { style = styledText.headerText }
     if (props.size == "subtitle") { style = styledText.subheaderText }
+    if (props.size == "bold") { style = styledText.bold }
     return <Text style={(props.color) ? [style.color, { color: props.color }] : style}>{props.children}</Text>
 }
 
@@ -59,5 +60,11 @@ const styledText = {
         color: "#0A3364",
         fontFamily: 'Poppins-Bold',
         fontSize: 20,
+    },
+    bold: {
+        color: "#0A3364",
+        fontSize: 27,
+        fontFamily: 'Poppins-Bold',
+        fontWeight: "800",
     }
 }

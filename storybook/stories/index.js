@@ -11,3 +11,4 @@ import './PinCode/PinCode.stories';
 import './RestaurantCard/RestaurantCard.stories';
 import './ResultPage/ResultPage.stories';
 import './CardWidget/CardWidget.stories';
+import './PaymentPage/PaymentPage.stories';
