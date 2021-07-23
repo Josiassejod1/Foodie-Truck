@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react-native';
 import CenterView from '../CenterView';
 import GenericSplashView from '../GenericSplashView/GenericSplashView';
 import PublisherBtn from '../PublisherBtn/PublisherBtn';
+import GenericBtn from '../Button/GenericBtn';
 
 
 const genericSplash = storiesOf('Generic Splash', module);
@@ -17,5 +18,7 @@ const styles = {
 }
 
 genericSplash.add('generic splash screen', () => (<GenericSplashView subtitle="Find the best food trucks around" style={styles.children} >
-    <PublisherBtn title="Publish" />
+    <GenericBtn width={240} height={51} borderRadius={20} paddingTop={12} color="#B84343">
+        Get Started
+    </GenericBtn>
 </GenericSplashView>));
