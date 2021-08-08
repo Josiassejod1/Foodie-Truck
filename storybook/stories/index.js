@@ -14,3 +14,4 @@ import './CardWidget/CardWidget.stories';
 import './PaymentPage/PaymentPage.stories';
 import './StyledTextInput/StyledTextInput.stories';
 import './Auth/SignIn/SignIn.stories';
+import './BottomSheet/BottomSheet.stories';
