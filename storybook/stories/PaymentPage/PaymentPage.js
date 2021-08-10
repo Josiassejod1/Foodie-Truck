@@ -64,7 +64,7 @@ export default function PaymentPage(props) {
             </Text>
         </View>
         <View style={{paddingTop: 40}}>
-            <PublisherBtn backgroundColor="#C90000" borderRadius={10} title="Publish" selected={false} />
+            <PublisherBtn backgroundColor="#C90000" borderRadius={10} title="Pay Now" selected={false} fontWeight={true}/>
         </View>
     </View>
   );
