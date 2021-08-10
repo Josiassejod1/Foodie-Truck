@@ -21,6 +21,7 @@ export default function StyledText(props) {
     if (props.size == "header") { style = styledText.headerText }
     if (props.size == "subtitle") { style = styledText.subheaderText }
     if (props.size == "bold") { style = styledText.bold }
+    if (props.size == "bold-light") { style = styledText.boldLight }
     return <Text style={(props.color) ? [style.color, { color: props.color }] : style}>{props.children}</Text>
 }
 
@@ -63,8 +64,14 @@ const styledText = {
     },
     bold: {
         color: "#0A3364",
-        fontSize: 27,
+        fontSize: 24,
         fontFamily: 'Poppins-Bold',
         fontWeight: "800",
+    },
+    boldLight: {
+        color: "#0A3364",
+        fontSize: 20,
+        fontFamily: 'Poppins-Bold',
+        fontWeight: "600",
     }
 }

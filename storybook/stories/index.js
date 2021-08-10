@@ -15,3 +15,7 @@ import './PaymentPage/PaymentPage.stories';
 import './StyledTextInput/StyledTextInput.stories';
 import './Auth/SignIn/SignIn.stories';
 import './BottomSheet/BottomSheet.stories';
+import './Menu/Tab.stories';
+import './Menu/Item.stories';
+import './Cart/CartPage.stories';
+
