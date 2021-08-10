@@ -13,7 +13,7 @@ export default function PubliserBtn(props) {
         <TouchableOpacity
             style={style.buttonContainer}
             onPress={() => null}>
-            <Text style={style.buttonText}>{props.title}</Text>
+            <Text style={[style.buttonText, props.fontWeight ?  {fontWeight: '800'} : {fontWeight: 'normal'}]}>{props.title}</Text>
         </TouchableOpacity >
     )
 }
@@ -30,6 +30,6 @@ const style = {
         color: 'white',
         textAlign: 'center',
         fontFamily: 'Poppins',
-        fontSize: 18
+        fontSize: 18,
     }
 }
