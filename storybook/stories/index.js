@@ -17,3 +17,4 @@ import './Auth/SignIn/SignIn.stories';
 import './Menu/Tab.stories';
 import './Menu/Item.stories';
 import './Cart/CartPage.stories';
+import  './Menu/NewItemFields.stories';
