@@ -13,7 +13,8 @@ export default function AnnouncementPage(props) {
             paddingBottom: 13
         },
         annoucment: {
-            paddingBottom: 38
+            paddingBottom: 38,
+            alignItems: 'center'
         }
     }
     return(
