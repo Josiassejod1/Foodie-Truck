@@ -14,6 +14,7 @@ export default function GenericBtn(props) {
             color: 'white',
             textAlign: 'center',
             fontFamily: 'Poppins',
+            fontWeight: props.fontWeight ? props.fontWeight : 'normal',
             fontSize: props.fontSize ? props.fontSize : 18
         }
     }

@@ -8,5 +8,4 @@ import CustomBottomSheet from '../BottomSheet/BottomSheet/';
 const generic = storiesOf('Bottom Sheet', module);
 generic.add('bottom  sheet', () => (
     <CustomBottomSheet>
-        <Text>Awesome Sauce</Text>
     </CustomBottomSheet>));

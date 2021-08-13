@@ -1,6 +1,6 @@
 
 
-import React from 'react';
+import React, { useState } from 'react';
 import {View, Text, Image} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import CardWidget from '../CardWidget/CardWidget';
@@ -8,8 +8,9 @@ import StyledText from '../StyledText/StyledText';
 import PublisherBtn from '../PublisherBtn/PublisherBtn';
 import { useFonts, Poppins } from 'expo-font';
 import BackButton from '../../../src/assets/images/back.svg';
-
+import CustomBottomSheet from '../BottomSheet/BottomSheet';
 export default function PaymentPage(props) {
+    const [bottomSheet, setBottomSheetState] = useState(false);
     let [fontsLoaded] = useFonts({
         "Poppins-Bold": require('../../../fonts/Poppins-Bold.ttf'),
     });
@@ -23,14 +24,15 @@ export default function PaymentPage(props) {
             color: '#3E3E3E'
         }
     }
-  return (
+
+   return (
     <View >
         <TouchableOpacity style={{paddingBottom: 32}}>
             <BackButton></BackButton>
         </TouchableOpacity>
         <StyledText size="bold">Payment</StyledText>
         <View justifyContent="flex-end" flexDirection='row'>
-        <TouchableOpacity style={{width: 150, height: 100}} justifyContent="flex-end" flexDirection='row'>
+        <TouchableOpacity style={{width: 150, height: 100}} justifyContent="flex-end" flexDirection='row' onPress={() => setBottomSheetState(true)}>
            <Text  style={{paddingTop: 10}}>
             + Add New Card
            </Text>
