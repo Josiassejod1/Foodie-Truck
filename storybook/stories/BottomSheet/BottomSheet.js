@@ -9,7 +9,7 @@ import GenericBtn from '../Button/GenericBtn';
 
 export default function CustomBottomSheet(props) {
     const bottomSheetRef = useRef(null);
-    const snapPoints = useMemo(() => ['0%', '25%', '55%',], []);
+    const snapPoints = useMemo(() => ['55%',], []);
     
     const styles = {
         contentContainer: {
