@@ -19,4 +19,5 @@ import './Menu/Tab.stories';
 import './Menu/Item.stories';
 import './Cart/CartPage.stories';
 import './Annoucements/Annoucement.stories';
+import './OrderPages/ConfirmationPage.stories';
 
