@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import {View} from 'react-native';
 import ConfirmationPage from './ConfirmationPage';
+import CheckoutPage from './CheckoutPage';
 
 
 const orderStories = storiesOf('Order Pages', module);
@@ -24,6 +25,10 @@ const order = {
     subTotal: '23.00',
     pickupLocation: '10 Green St, South Amber, DC, 23404'
 }
-orderStories.add('checkout page', () => (<View>
+orderStories.add('confirmation page', () => (<View>
     <ConfirmationPage order={order}/>
+</View>));
+
+orderStories.add('checkout page', () => (<View>
+    <CheckoutPage order={order}/>
 </View>));
