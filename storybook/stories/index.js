@@ -13,11 +13,11 @@ import './ResultPage/ResultPage.stories';
 import './CardWidget/CardWidget.stories';
 import './PaymentPage/PaymentPage.stories';
 import './StyledTextInput/StyledTextInput.stories';
-import './Auth/SignIn/SignIn.stories';
 import './BottomSheet/BottomSheet.stories';
 import './Menu/Tab.stories';
 import './Menu/Item.stories';
+import './Auth/Auth.stories';
 import './Cart/CartPage.stories';
 import './Annoucements/Annoucement.stories';
 import './OrderPages/ConfirmationPage.stories';
-
+import './NavBar/Navbar.stories';
