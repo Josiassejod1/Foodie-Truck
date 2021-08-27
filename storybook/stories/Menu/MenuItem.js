@@ -13,7 +13,7 @@ export default function MenuItem(props) {
 
     const styles = {
         container: {
-            justifyContent: "space-evenly",
+            justifyContent: "space-between",
             flexDirection: 'row'
         }
     }

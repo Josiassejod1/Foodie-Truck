@@ -2,28 +2,10 @@ import React, { useState} from 'react';
 import { View, useWindowDimensions, Text,  ScrollView} from 'react-native';
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 import Menu from '../../../data/constants/Menu/';
-
-const FirstRoute = (props) => (
-    <View><Text>{Menu[0]}</Text></View>
-  );
-
-  const SecondRoute = (props) => (
-    <View><Text>{Menu[1]}</Text></View>
-  );
+import MenuItem from '../Menu/MenuItem';
+import MenuList from '../Menu/MenuList';
 
 
-const renderScene = ({route, jumpTo}) => {
-  switch(route.key) {
-    case 'main':
-    
-    case 'sides':
-
-    case 'appetizer':
-
-    case 'drinks':
-  }
-}
-  
 export default function MenuTabView(props) {
 
     
@@ -36,7 +18,7 @@ export default function MenuTabView(props) {
           shadowOpacity: 0,
         },
         tab: {
-          width: 120,
+          width: 100,
           alignItems: 'center',
         },
         indicator: {
@@ -50,13 +32,36 @@ export default function MenuTabView(props) {
           fontSize: 12
         },
       };
-    //const [index, setIndex] = useState(0);
+    const [index, setIndex] = useState(0);
+
+    const List = (list) => (
+      <MenuList items={props.items} type={list.type}/>
+    );
+  
+    const renderScene = ({ route }) => {
+      switch (route.key) {
+
+        case 'appetizers':
+          return <List type={route.key}/>;
+        case 'main':
+          return <List type={route.key}/>;
+        case 'sides':
+            return <List type={route.key}/>;
+        case 'drinks':
+            return <List type={route.key}/>;
+        default:
+          return null;
+      }
+    };
+    
     
     const layout = useWindowDimensions();
-    // const [routes, setState] = useState([
-    //     { key: 'first', title: Menu[0] },
-    //     { key: 'second', title: Menu[1] },
-    //   ]);
+    const [routes, setState] = useState([
+        { key: 'appetizers', title: Menu[0] },
+        { key: 'main', title: Menu[1] },
+        { key: 'sides', title: Menu[2] },
+        { key: 'drinks', title: Menu[3] },
+      ]);
 
       const renderTabBar = props => (
         <TabBar
@@ -65,8 +70,8 @@ export default function MenuTabView(props) {
             activeColor="#439CCE"
             style={styles.tabbar}
             tabStyle={styles.tab}
-            contentContainerStyle={{width: '50%'}}
-            indicatorContainerStyle={{ marginHorizontal: 40, paddingHorizontal: 80 }}
+            contentContainerStyle={{width: '75%'}}
+            indicatorContainerStyle={{ marginHorizontal: 30, paddingHorizontal: 80 }}
             labelStyle={styles.label}
             indicatorStyle={styles.indicator}
         />
@@ -74,8 +79,8 @@ export default function MenuTabView(props) {
       
 
     return (
-        <ScrollView contentContainerStyle={{flexGrow:1}}>
-        <View style={{paddingBottom: 50, zIndex: 100, elevation: 3, height: '25%'}}>
+        <View contentContainerStyle={{flexGrow:1}}>
+        <View style={{paddingBottom: 50, zIndex: 100, elevation: 3, height: '75%'}}>
         <TabView
             lazy
             scrollEnabled
@@ -90,6 +95,6 @@ export default function MenuTabView(props) {
         <View style={{zIndex: 50}}>
            
         </View>
-        </ScrollView>
+        </View>
     );
 }

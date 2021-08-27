@@ -1,13 +1,17 @@
 import MenuItem from "./MenuItem";
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { View, SectionList} from 'react-native';
+import CenterView from "../CenterView";
+import StyledText from "../StyledText/StyledText";
 
 
 export default function MenuList(props) {
+    const [menuItems, setItems] = useState(items)
     let items = props.items || [];
     const isAdmin = props.isAdmin || false;
     const menu_type = props.type || "all";
-    items = filterItem(menu_type);
+    filterItem(menu_type);
+    console.log(menuItems);
     
     const FlatListItemSeparator = () => {
         return (
@@ -18,28 +22,34 @@ export default function MenuList(props) {
     function filterItem(menu_type) {
         let itemCopy = [...items];
         if (menu_type == "all") {
-            return itemCopy;
+            setItems(itemCopy);
         } else {
         itemCopy = itemCopy.filter((data, i, array) => {
-            return array[i].type == "main" ;
+            return data.type == menu_type ;
         });
         }
 
-        return itemCopy;
+        useEffect(() =>  setItems(itemCopy), []);
     }
 
- return(
-    <SectionList
+    const sectionList = (<SectionList
     horizontal={false}
     showsHorizontalScrollIndicator={false}
     ItemSeparatorComponent={FlatListItemSeparator}
     sections={[
-        { title: '', data: items || [] },
+        { title: '', data: menuItems || [] },
     ]}
     renderItem={({ item }) => (
         <MenuItem {...item}  isAdmin={isAdmin}/>
     )}
     keyExtractor={(item, index) => index}
-/>
+/>)
+
+const missingItem = <StyledText size="header">No {menu_type} Available</StyledText>
+
+ return(
+    <>
+        { menuItems === [] ? missingItem : sectionList }
+    </>
  );
 }
