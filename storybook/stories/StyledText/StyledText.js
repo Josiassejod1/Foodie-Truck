@@ -6,6 +6,7 @@ import { size } from 'lodash';
 
 export default function StyledText(props) {
     var style = null;
+    let color = props.color || "black";
     let [fontsLoaded] = useFonts({
         "Poppins": require('../../../fonts/Poppins.ttf'),
         "Poppins-Light": require('../../../fonts/Poppins-Light.ttf'),
@@ -22,7 +23,7 @@ export default function StyledText(props) {
     if (props.size == "subtitle") { style = styledText.subheaderText }
     if (props.size == "bold") { style = styledText.bold }
     if (props.size == "bold-light") { style = styledText.boldLight }
-    return <Text style={(props.color) ? [style.color, { color: props.color }] : style}>{props.children}</Text>
+    return <Text style={(color) ? [style, { color: color }] : style}>{props.children}</Text>
 }
 
 const styledText = {

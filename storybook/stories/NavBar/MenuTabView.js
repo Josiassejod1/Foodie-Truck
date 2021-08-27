@@ -1,9 +1,7 @@
 import React, { useState} from 'react';
-import { View, useWindowDimensions, Text,  ScrollView, VirtualizedList  } from 'react-native';
+import { View, useWindowDimensions, Text,  ScrollView} from 'react-native';
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 import Menu from '../../../data/constants/Menu/';
-import ResultPage from '../ResultPage/ResultPage';
-import LocationPage from '../LocationView/LocationView'
 
 const FirstRoute = (props) => (
     <View><Text>{Menu[0]}</Text></View>
@@ -14,10 +12,17 @@ const FirstRoute = (props) => (
   );
 
 
-const renderScene = SceneMap({
-    first:  FirstRoute,
-    second: SecondRoute,
-  });
+const renderScene = ({route, jumpTo}) => {
+  switch(route.key) {
+    case 'main':
+    
+    case 'sides':
+
+    case 'appetizer':
+
+    case 'drinks':
+  }
+}
   
 export default function MenuTabView(props) {
 
@@ -45,13 +50,13 @@ export default function MenuTabView(props) {
           fontSize: 12
         },
       };
-    const [index, setIndex] = useState(0);
+    //const [index, setIndex] = useState(0);
     
     const layout = useWindowDimensions();
-    const [routes, setState] = useState([
-        { key: 'first', title: Menu[0] },
-        { key: 'second', title: Menu[1] },
-      ]);
+    // const [routes, setState] = useState([
+    //     { key: 'first', title: Menu[0] },
+    //     { key: 'second', title: Menu[1] },
+    //   ]);
 
       const renderTabBar = props => (
         <TabBar
@@ -70,7 +75,6 @@ export default function MenuTabView(props) {
 
     return (
         <ScrollView contentContainerStyle={{flexGrow:1}}>
-        <Text>TESTTTTT</Text>
         <View style={{paddingBottom: 50, zIndex: 100, elevation: 3, height: '25%'}}>
         <TabView
             lazy
@@ -86,7 +90,6 @@ export default function MenuTabView(props) {
         <View style={{zIndex: 50}}>
            
         </View>
-        <Text>TESTTTTT 2</Text>
         </ScrollView>
     );
 }
