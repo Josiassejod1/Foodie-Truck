@@ -45,7 +45,7 @@ export default function CartPage(props){
             showsHorizontalScrollIndicator={false}
             ItemSeparatorComponent={FlatListItemSeparator}
             sections={[
-                { title: '', data: props.items },
+                { title: '', data: props.items || [] },
             ]}
             renderItem={({ item }) => (
                         // Item for the FlatListItems

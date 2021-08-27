@@ -5,14 +5,17 @@ import { useFonts, Poppins } from 'expo-font';
 export default function Item(props) {
     let [fontsLoaded] = useFonts({
         "Poppins": require('../../../fonts/Poppins.ttf'),
+        "Avenir": require('../../../fonts/Avenir.otf'),
     });
+
+    const alternate = props.alternate ?? false
 
     const style = {
         text: {
-            fontFamily: 'Poppins-Light',
-            fontSize: 16,
-            color: '#424347',
-            fontWeight: 'normal',
+            fontFamily: alternate ? 'Avenir' : 'Poppins-Light',
+            fontSize: alternate ? 18 : 16,
+            color: alternate ? 'black' : '#424347',
+            fontWeight: alternate ? '800' : 'normal',
             padding: 8,
         },
         inStock: {
@@ -21,8 +24,8 @@ export default function Item(props) {
             fontWeight: 'normal',
         },
         price: {
-            fontFamily: 'Poppins-Light',
-            color: 'black',
+            fontFamily: alternate ? 'Avenir' : 'Poppins-Light',
+            color: alternate ? '#B8BBC6' : 'black',
             fontSize: 14,
             paddingRight: 20,
             fontWeight: 'normal',
@@ -43,7 +46,7 @@ export default function Item(props) {
             <View style={style.row}>
                 <Text style={style.price}>$ {props.price}</Text>  
                {
-                   props.inStock ?  <Text style={style.inStock}>In stock </Text> :  <Text style={style.inStock}>Out of stock</Text>
+                   (!props.inStock && alternate) ?  <Text></Text> : props.inStock ? <Text style={style.inStock}>In stock </Text> :  <Text style={style.inStock}>Out of stock</Text>
                }
             </View>
         </View>

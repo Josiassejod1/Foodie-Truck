@@ -9,7 +9,6 @@ import { FontAwesome } from '@expo/vector-icons';
 import GenericBtn from '../Button/GenericBtn';
 
 export default function SignIn(props) {
-    console.log(props)
     return(
         <GenericSplashView subtitle="Sign In" style={props.styles.children}>
              <View style={props.styles.button}>
