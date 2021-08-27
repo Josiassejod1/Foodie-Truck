@@ -42,6 +42,7 @@ let Items = [
 
 
 navStory.add('nav bar', () => ( <NavBar isVendor={false}/>));
-navStory.add('tab view', () => (<MenuTabView items={Items}/>));
+navStory.add('tab view (consumer)', () => (<MenuTabView items={Items}/>));
+navStory.add('tab view (admin)', () => (<MenuTabView items={Items} isAdmin={true}/>));
 navStory.add('out of stock switch', () => (<OutofStockSwitch />));
 

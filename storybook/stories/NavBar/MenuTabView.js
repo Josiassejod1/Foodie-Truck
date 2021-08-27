@@ -35,7 +35,7 @@ export default function MenuTabView(props) {
     const [index, setIndex] = useState(0);
 
     const List = (list) => (
-      <MenuList items={props.items} type={list.type}/>
+      <MenuList {...props} type={list.type}/>
     );
   
     const renderScene = ({ route }) => {
