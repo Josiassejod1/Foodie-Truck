@@ -1,19 +1,10 @@
 import React from 'react';
-import { Text } from "react-native";
-
-import { useFonts, Poppins } from 'expo-font';
-import { size } from 'lodash';
+import { Text, StyleSheet } from "react-native";
 
 export default function StyledText(props) {
     var style = null;
-    let color = props.color || "black";
-    let [fontsLoaded] = useFonts({
-        "Poppins": require('../../../fonts/Poppins.ttf'),
-        "Poppins-Light": require('../../../fonts/Poppins-Light.ttf'),
-        "Poppins-Regular": require('../../../fonts/Poppins-Regular.ttf'),
-        "Poppins-Medium": require('../../../fonts/Poppins-Medium.ttf'),
-        "Poppins-Bold": require('../../../fonts/Poppins-Bold.ttf'),
-    });
+    let color = props.color;
+    let fontSize = props.fontSize;
     if (props.size == "xtra-sm") { style = styledText.small }
     if (props.size == "sm") { style = styledText.smallWarning }
     if (props.size == "xtra-m") { style = styledText.grayedText }
@@ -23,10 +14,12 @@ export default function StyledText(props) {
     if (props.size == "subtitle") { style = styledText.subheaderText }
     if (props.size == "bold") { style = styledText.bold }
     if (props.size == "bold-light") { style = styledText.boldLight }
+    if (props.size == "big-skinny") { style = styledText.bigSkinny }
+    if (fontSize && style) { style.fontSize = fontSize  }
     return <Text style={(color) ? [style, { color: color }] : style}>{props.children}</Text>
 }
 
-const styledText = {
+const styledText = StyleSheet.create({
     small: {
         color: "black",
         fontSize: 12,
@@ -69,10 +62,15 @@ const styledText = {
         fontFamily: 'Poppins-Bold',
         fontWeight: "800",
     },
+    bigSkinny: {
+        color: "#0A3364",
+        fontSize: 22,
+        fontFamily: 'Poppins-Light',
+    },
     boldLight: {
         color: "#0A3364",
         fontSize: 20,
         fontFamily: 'Poppins-Bold',
         fontWeight: "600",
     }
-}
+});

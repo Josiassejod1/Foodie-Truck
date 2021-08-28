@@ -42,11 +42,11 @@ export default function ConfirmationPage(props) {
     return(
         <ScrollView style={styles.container}>
            <View style={styles.header}>
-               <Text>Order Complete</Text>
-               <Text>Order Number #{order.id}</Text>
+               <StyledText size="big-skinny" color="#206FCE" fontSize={22}>Order completed!</StyledText>
+               <StyledText size="sm" color="#BBBBB7">Order Number #{order.id}</StyledText>
             </View>
             <View style={{paddingBottom: 42}}>
-               <Text>Ordered Items</Text>
+               <StyledText size="bold">Ordered Items</StyledText>
             </View>
             <View style={{paddingBottom: 105}}>
             <SectionList
@@ -63,7 +63,7 @@ export default function ConfirmationPage(props) {
             />
             </View>
             <View style={{paddingBottom: 51}}>
-               <Text>Pickup Address</Text>
+               <StyledText size="big-skinny" color="#424347">Pick up address</StyledText>
                <Text>{order.pickupLocation}</Text>
             </View>
             <View style={styles.row}>
@@ -71,11 +71,11 @@ export default function ConfirmationPage(props) {
                 <Text>${order.subTotal}</Text>
             </View>
             <View style={styles.row}>
-                <Text>Summary</Text>
-                <Text>${order.grandTotal}</Text>
+                <StyledText size="l" color="black">Summary</StyledText>
+                <StyledText size="l" color="black">${order.grandTotal}</StyledText>
             </View>
             <View style={{alignItems: 'center'}}>
-                <GenericBtn width={341} height={59} borderRadius={10} paddingTop={18} color="#B84343">
+                <GenericBtn width={341} height={59} borderRadius={10} paddingTop={18} color="#C90000">
                     Continue Shopping
                 </GenericBtn>
             </View>
