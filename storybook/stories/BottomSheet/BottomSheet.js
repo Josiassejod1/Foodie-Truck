@@ -25,7 +25,7 @@ export default function CustomBottomSheet(props) {
           paddingLeft: 24,
           flexDirection: 'row', 
           paddingRight: 24,
-          justifyContent: 'space-start',
+          justifyContent: 'flex-start',
           
         },
         cardInfoContainer: {

@@ -22,7 +22,6 @@ export default function CheckoutPage(props) {
             paddingBottom: 26
         },
         header: {
-            alignItems: 'center',
             paddingTop: 71,
             paddingBottom: 42
         },
@@ -42,10 +41,10 @@ export default function CheckoutPage(props) {
     return(
         <ScrollView style={styles.container}>
            <View style={styles.header}>
-               <StyledText size="header">Checkout Out</StyledText>
+               <StyledText size="l">Checkout Out</StyledText>
             </View>
             <View style={{paddingBottom: 42}}>
-               <Text>Ordered Items</Text>
+                <StyledText size="bold">Ordered Items</StyledText>
             </View>
             <View style={{paddingBottom: 105}}>
             <SectionList
@@ -62,11 +61,11 @@ export default function CheckoutPage(props) {
             />
             </View>
             <View style={{paddingBottom: 51}}>
-               <Text>Pickup Address</Text>
+                <StyledText size="big-skinny" color="#424347">Pick up address</StyledText>
                <Text>{order.pickupLocation}</Text>
             </View>
             <View style={{alignItems: 'center'}}>
-                <GenericBtn width={341} height={59} borderRadius={10} paddingTop={18} color="#B84343">
+                <GenericBtn width={341} height={59} borderRadius={10} paddingTop={18} color="#C90000">
                     Proceed
                 </GenericBtn>
             </View>

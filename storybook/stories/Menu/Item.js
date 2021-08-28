@@ -33,7 +33,7 @@ export default function Item(props) {
         row: {
             paddingBottom: 9,
             flexDirection: 'row',
-            justifyContent: 'space-start'
+            justifyContent: 'flex-start'
         }
     }
 

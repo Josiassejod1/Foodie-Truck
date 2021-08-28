@@ -9,7 +9,7 @@ export default function OutofStockSwitch() {
     const toggleSwitch = () => setIsEnabled(!isEnabled);    
     return(
        <View>
-        { isEnabled && <View style={{paddingBottom: 7}}><StyledText size="m" color="#C90000" >Sold out</StyledText></View>}
+        { isEnabled && <View style={{paddingBottom: 7}}><StyledText size="sm" color="#C90000" >Sold out</StyledText></View>}
         <Switch
             trackColor={{ false: "gray", true: "#0A3364" }}
             ios_backgroundColor="#3e3e3e"
