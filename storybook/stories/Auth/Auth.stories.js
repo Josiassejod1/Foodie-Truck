@@ -4,6 +4,7 @@ import CenterView from '../CenterView';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 import Consumer from './SignUpConsumerForm';
+import Vendor from './SignUpVendorForm';
 
 
 const signUpStories = storiesOf('Auth', module);
@@ -35,4 +36,8 @@ signUpStories.add('sign up', () => (<CenterView>
 
 signUpStories.add('sign up (consumer)', () => (<CenterView>
     <Consumer styles={styles} />
+</CenterView>));
+
+signUpStories.add('sign up (vendor)', () => (<CenterView>
+    <Vendor styles={styles} />
 </CenterView>));

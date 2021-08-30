@@ -1,15 +1,21 @@
 
 
 
-import React from 'react';
-import {View, ScrollView, Text} from 'react-native';
+import React, { useState } from 'react';
+import {View, Text } from 'react-native';
 import GenericSplashView from '../GenericSplashView/GenericSplashView';
 import StyledTextInput from '../StyledTextInput/StyledTextInput';
-import { FontAwesome } from '@expo/vector-icons';
 import GenericBtn from '../Button/GenericBtn';
 import RadioButton from '../Button/RadioButton';
+import {Picker} from '@react-native-picker/picker';
+import Cuisine from "../../../data/constants/Cuisine";
+import { TextInput } from 'react-native-gesture-handler';
 
-export default function SignIn(props) {
+
+
+export default function SignInVendorForm(props) {
+    const [selectedCuisine, setSelectedCuisine] = useState();
+
     return(
         <GenericSplashView subtitle="Sign In" style={props.styles.children}>
            <View>
@@ -30,6 +36,15 @@ export default function SignIn(props) {
              </View>
              <View style={props.styles.button}>
              </View>
+             <View style={{borderRadius: 10, borderWidth: 1, borderColor: '#bdc3c7', overflow: 'hidden'}}>
+                <TextInput placeholder="Type of Cuisine" placeholderTextColor="#AFAFAF" render={(props) => (<Picker
+                style={{borderRadius: 10}}
+                selectedValue={selectedCuisine}
+                itemStyle={{ backgroundColor: "white", color: "#206FCE"}}
+                onValueChange={(itemValue, itemIndex) =>
+                    setSelectedCuisine(itemValue)
+                }>{ Cuisine.map((data, index) => { return <Picker.Item label={data} value={data.toLowerCase()} />}) }</Picker>)}/>
+            </View>
              <View  alignItems="center" style={{paddingBottom: 25}}>
                 <RadioButton onPress={() => null } text="I agree to terms & conditions"/>
              </View>

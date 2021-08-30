@@ -9,7 +9,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import GenericBtn from '../Button/GenericBtn';
 import RadioButton from '../Button/RadioButton';
 
-export default function SignIn(props) {
+export default function SignUpConsumerForm(props) {
     return(
         <GenericSplashView subtitle="Sign In" style={props.styles.children}>
            <View>
