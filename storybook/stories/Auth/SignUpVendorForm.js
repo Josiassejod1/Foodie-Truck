@@ -36,6 +36,7 @@ export default function SignInVendorForm(props) {
              </View>
              <View style={props.styles.button}>
              </View>
+             //TODO: Replace with React Native Picker Select
              <View style={{borderRadius: 10, borderWidth: 1, borderColor: '#bdc3c7', overflow: 'hidden'}}>
                 <TextInput placeholder="Type of Cuisine" placeholderTextColor="#AFAFAF" render={(props) => (<Picker
                 style={{borderRadius: 10}}
