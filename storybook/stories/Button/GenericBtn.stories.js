@@ -6,7 +6,9 @@ import GoogleIcon from '../../../src/assets/images/google.svg';
 import TrashBtn from './TrashBtn';
 import OutofStockSwitch from './OutofStockSwitch';
 import AddToCart from './AddToCartBtn';
+import {View} from "react-native";
 import GenericSplashView from '../GenericSplashView/GenericSplashView';
+import RadioButton from './RadioButton';
 
 
 const generic = storiesOf('Generic Button', module);
@@ -44,4 +46,11 @@ generic.add('Add To Cart', () => (
     <CenterView>
         <AddToCart></AddToCart>
     </CenterView>
+));
+
+
+generic.add('Radio Button', () => (
+   <View style={{backgroundColor: "black"}}>
+        <RadioButton onPress={() => null } text="I agree to terms & conditions"/>
+   </View>
 ));

@@ -12,6 +12,7 @@
   "dependencies": {
     "@expo-google-fonts/inter": "^0.1.0",
     "@gorhom/bottom-sheet": "^2.3.0",
+    "@react-native-picker/picker": "^1.16.7",
     "@react-navigation/drawer": "^6.1.4",
     "@react-navigation/native": "^6.0.2",
     "expo": "~40.0.0",

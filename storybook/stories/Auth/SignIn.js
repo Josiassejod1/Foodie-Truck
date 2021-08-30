@@ -36,11 +36,11 @@ export default function SignIn(props) {
                 Sign Up
             </GenericBtn>
              </View>
-             <View style={props.styles.button}>
+             {/* <View style={props.styles.button}>
              <FontAwesome.Button name="google" backgroundColor="#092A53" width={341} height={59}>
                 Continue With Google
             </FontAwesome.Button>
-             </View>
+             </View> */}
              <View>
                  <View flexDirection="row" alignItems="center"  justifyContent="center">
                      <Text style={{color: 'white', fontFamily: 'Encode-Sans',fontWeight: 'bold'}}> Don't Have An Account ? </Text>

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { View } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import StyledText from '../StyledText/StyledText';
 import Logo from '../../../src/assets/images/logo.svg';
 import Donut from '../../../src/assets/images/donut.svg';
@@ -12,19 +12,21 @@ export default function GenericSplashView(props) {
 			backgroundColor: "#206FCE",
 			width: '100%',
 			height: '100%',
-			position: 'relative'
+			position: 'relative',
+			flex: 1
 		},
 		donut: {
 			transform: [{
-				scaleX: -1
+				scaleX: -1,
 			}],
 			position: 'absolute',
 			top: 350,
 		},
 		headerTitle: {
 			position: 'absolute',
-			top: 150,
-			padding: 30
+			top: 50,
+			padding: 30,
+			zIndex: 100
 		},
 		subtitle: {
 			marginTop: 8,
@@ -39,7 +41,7 @@ export default function GenericSplashView(props) {
 	}
 
 	return (
-		<View style={styles.container}>
+		<ScrollView style={styles.container} snapToStart={false} snapToEnd={false} contentContainerStyle={{marginBottom: 5, flex: 1}}>
 			<View style={styles.headerTitle}>
 				<View style={styles.logo}>
 					<Logo />
@@ -54,6 +56,6 @@ export default function GenericSplashView(props) {
 			<View style={checkStyle(props) ? props.style : {}}>
 				{props.children}
 			</View>
-		</View>
+		</ScrollView>
 	)
 }
