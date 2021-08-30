@@ -21,3 +21,4 @@ import './Cart/CartPage.stories';
 import './Annoucements/Annoucement.stories';
 import './OrderPages/ConfirmationPage.stories';
 import './NavBar/Navbar.stories';
+import './ImageSlide/ImageSlide.stories';
