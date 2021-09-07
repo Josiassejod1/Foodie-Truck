@@ -6,38 +6,20 @@ import {View, TouchableOpacity, Text} from 'react-native';
 import GenericSplashView from '../GenericSplashView/GenericSplashView';
 import StyledTextInput from '../StyledTextInput/StyledTextInput';
 import GenericBtn from '../Button/GenericBtn';
-import SignUp from './SignUp';
 
-export default function SignIn(props, {navigation}) {
+export default function SignIn({navigation}) {
     const styles = {
-		container: {
-			backgroundColor: "#206FCE",
-			width: '100%',
-			height: '100%',
-			position: 'relative',
-			flex: 1
-		},
-		donut: {
-			transform: [{
-				scaleX: -1,
-			}],
-			position: 'absolute',
-			top: 350,
-		},
-		headerTitle: {
-			position: 'absolute',
-			top: 50,
-			padding: 30,
-			zIndex: 100
-		},
-		subtitle: {
-			marginTop: 8,
-			maxWidth: 200
-		},
-		logo: {
-			marginBottom: 8
-		},
-	}
+        children: {
+            left: 0,
+            flex: 1,
+            top: 275,
+            alignItems: 'center'
+        },
+        button: {
+            paddingBottom: 15,
+            alignItems: 'center',
+        }
+    }
 
     return(
         <GenericSplashView subtitle="Sign In" style={styles.children}>
@@ -67,7 +49,7 @@ export default function SignIn(props, {navigation}) {
             </GenericBtn>
              </View>
              <View>
-                 <TouchableOpacity onPress={() => navigation.navigate('Sign Up')}>
+                 <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
                  <View flexDirection="row" alignItems="center"  justifyContent="center">
                      <Text style={{color: 'white', fontFamily: 'Encode-Sans',fontWeight: 'bold'}}>Don't Have An Account ?</Text>
                      <Text style={{color: '#092A53', fontFamily: 'Encode-Sans', fontWeight: 'bold'}}>Sign Up</Text>

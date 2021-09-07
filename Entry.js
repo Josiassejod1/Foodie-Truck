@@ -1,64 +1,54 @@
+import 'react-native-gesture-handler';
 import React, { useState, useEffect } from 'react';
 import { View, Text } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import SignIn from './storybook/stories/Auth/SignIn';
 import GenericSplashView from './storybook/stories/GenericSplashView/GenericSplashView';
 import SignUp from './storybook/stories/Auth/SignUp';
-import { NavigationContainer } from '@react-navigation/native';
 import { HomePage } from './storybook/stories/HomePage/HomePage';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import Navbar from './storybook/stories/NavBar/Navbar';
+import store from "./data/store/rootStore";
+import { NavigationContainer } from '@react-navigation/native';
+import SplashScreen from 'react-native-splash-screen';
+
 
 export default function Entry() {
   // Set an initializing state whilst Firebase connects
   const [initializing, setInitializing] = useState(true);
-  const [user, setUser] = useState();
-  const Stack = createNativeStackNavigator();
-  const styles = {
-    children: {
-        left: 0,
-        flex: 1,
-        top: 175,
-        alignItems: 'center'
-    },
-    children2: {
-        left: 0,
-        flex: 1,
-        top: 275,
-        alignItems: 'center'
-    },
-    button: {
-        paddingBottom: 15,
-        alignItems: 'center',
-    }
-}
+  const StoreContext = React.createContext(store);
+  const Stack = createStackNavigator();
 
   // Handle user state changes
   function changeAuth(user) {
-    setUser(user);
+    store.userStore.setUser(user);
     if (initializing) { setInitializing(false) };
   }
 
   useEffect(() => {
-    const subscriber = auth().onAuthStateChanged(changeAuth);
-    return subscriber; // unsubscribe on unmount
+    SplashScreen.hide();
+    const authUser = auth().onAuthStateChanged(changeAuth);
+    store.sessionStore.setAuthUser(authUser);
+    return authUser; // unsubscribe on unmount
   }, []);
 
-    if (initializing) return <GenericSplashView subtitle="Find the best food trucks around"></GenericSplashView>;
+    if (initializing) return null;
   return(
-    <NavigationContainer>
-       <Stack.Navigator>
-       { user ? (
-        <>
-          <Stack.Screen name="Home" component={HomePage}   options={{ headerTitle: props =>  }}/>
-        </>
+    <StoreContext.Provider>
+       <View style={{flex: 1}}>
+       <NavigationContainer>
+        <Stack.Navigator>
+       { store.userStore.user ? (
+        <Stack.Screen name="HomeScreen" component={Navbar}/>
       ) : (
-        <>
-          <Stack.Screen name="SignIn" component={SignIn} />
-          <Stack.Screen name="SignUp" component={SignUp} />
-        </>
+       <>
+        <Stack.Screen name="SignIn" component={SignIn}/>
+        <Stack.Screen name="SignUp" component={SignUp}/>
+       </>
     )}
        </Stack.Navigator>
-    </NavigationContainer>
-  )
+       </NavigationContainer>
+       </View>
+    </StoreContext.Provider>
+  );
 }

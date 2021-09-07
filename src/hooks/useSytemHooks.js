@@ -19,7 +19,7 @@ export default function useSystemHook() {
         /**
          * You can load any font you'd like from a .ttf file placed in assests/fonts/YoUrFoNtHeRe
          */
-       const sheesh =  await Font.loadAsync({
+       await Font.loadAsync({
           Poppins: require('../../fonts/Poppins.ttf'),
           "Poppins-Light": require('../../fonts/Poppins-Light.ttf'),
           "Poppins-Bold": require('../../fonts/Poppins-Bold.ttf'),
@@ -28,7 +28,6 @@ export default function useSystemHook() {
           "Poppins-Medium": require('../../fonts/Poppins-Medium.ttf'),
           "Avenir": require('../../fonts/Avenir.otf'),
         })
-        console.warn(sheesh);
       } catch (e) {
         // We might want to provide this error information to an error reporting service
       } finally {

@@ -29,7 +29,6 @@ export default function App(props) {
         },
       };
   return (
-    <NavigationContainer theme={MyTheme}>
       <Drawer.Navigator 
         drawerType="back"
         initialRouteName="Home"
@@ -76,6 +75,5 @@ export default function App(props) {
           />)
        }
       </Drawer.Navigator>
-    </NavigationContainer>
   );
 }
