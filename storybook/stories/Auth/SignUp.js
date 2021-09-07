@@ -28,12 +28,12 @@ export default function SignUp(props, {navigation}) {
                 </Text>
              </View>
              <View style={{paddingBottom: 35, alignItems: 'center'}}>
-            <GenericBtn width={341} height={59} borderRadius={10} paddingTop={18} color="#B84343" fontWeight={'bold'}>
+            <GenericBtn width={341} height={59} borderRadius={10} paddingTop={18} color="#B84343" fontWeight={'bold'} onPress={() => navigation.navigate('SignUpConsumer')}>
                 Are you a foodie?
             </GenericBtn>
              </View>
              <View style={styles.button}>
-             <GenericBtn width={341} height={59} borderRadius={10} paddingTop={18} color="#092A53" fontWeight={'bold'}>
+             <GenericBtn width={341} height={59} borderRadius={10} paddingTop={18} color="#092A53" fontWeight={'bold'} onPress={() => avigation.navigate('SignUpVendor')}>
                 Are you a food truck?
             </GenericBtn>
              </View>

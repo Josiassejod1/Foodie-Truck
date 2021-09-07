@@ -5,6 +5,7 @@ import { useFonts, Poppins } from 'expo-font';
 
 
 export default function GenericBtn(props) {
+    onPress = props.onPress || (() => {});
     let [fontsLoaded] = useFonts({
         "Poppins": require('../../../fonts/Poppins.ttf'),
     });
@@ -28,7 +29,7 @@ export default function GenericBtn(props) {
                 borderRadius: props.borderRadius,
                 paddingTop: props.paddingTop
             }}
-            onPress={() => null}>
+            onPress={() => onPress()}>
             <Text style={styles.buttonText}>{props.children}</Text>
         </TouchableOpacity >
     )
