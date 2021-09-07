@@ -30,8 +30,8 @@ export default function SignIn({navigation}) {
         console.log("Test");
         console.warn(contextType);
        auth().signInWithEmailAndPassword(email, password)
-       .then(() => console.log("success"))
-       .catch((e) => Alert.alert("Incorrect Email or Password"));
+       .then(() => {  navigation.push("HomeScreen")})
+       .catch((e) => Alert.alert(`Incorrect Email or Password: ${e}`));
     }
 
     return(

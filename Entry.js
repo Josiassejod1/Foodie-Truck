@@ -30,7 +30,7 @@ export default function Entry() {
     const authUser = auth().onAuthStateChanged(changeAuth);
     store.sessionStore.setAuthUser(authUser);
     return authUser; // unsubscribe on unmount
-  }, []);
+  });
 
     if (initializing) return null;
   return(
@@ -38,16 +38,11 @@ export default function Entry() {
        <View style={{flex: 1}}>
        <NavigationContainer>
         <Stack.Navigator>
-       { (store.userStore.user != null) ? (
-        <Stack.Screen name="HomeScreen" component={Navbar}/>
-      ) : (
-       <>
-        <Stack.Screen name="SignIn" component={SignIn}/>
-        <Stack.Screen name="SignUp" component={SignUp}/>
-        <Stack.Screen name="SignUpConsumer" component={SignUpConsumerForm}/>
-        <Stack.Screen name="SignUpVendor" component={SignUpVendorForm}/>
-       </>
-    )}
+       { (store.userStore.user != null) && <Stack.Screen name="HomeScreen" component={Navbar} options={{ headerShown: false }}/> }
+        <Stack.Screen name="SignIn" component={SignIn} options={{ headerShown: false }}/>
+        <Stack.Screen name="SignUp" component={SignUp} options={{ headerShown: false }}/>
+        <Stack.Screen name="SignUpConsumer" component={SignUpConsumerForm}options={{ headerShown: false }}/>
+        <Stack.Screen name="SignUpVendor" component={SignUpVendorForm} options={{ headerShown: false }}/>
        </Stack.Navigator>
        </NavigationContainer>
        </View>

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import  React, { useEffect} from 'react';
 import {Text} from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
@@ -13,11 +13,21 @@ import HornSVG from '../../../src/assets/images/nav_icons/horn.svg';
 import InfoSVG from '../../../src/assets/images/nav_icons/info.svg';
 import PinSVG from '../../../src/assets/images/nav_icons/pin.svg';
 import Header from './Header';
+import auth from '@react-native-firebase/auth';
 import { HomePage } from '../HomePage/HomePage';
 
 
 
 const Drawer = createDrawerNavigator();
+
+function SignOutScreen({ navigation }) {
+  useEffect(() => {
+    auth().signOut();
+    navigation.popToTop();
+  });
+  return null;
+}
+
 
 export default function App(props) {
     isVendor = props.isVendor || false
@@ -45,7 +55,7 @@ export default function App(props) {
            <Drawer.Screen 
             key={drawer.name}
             name={drawer.name}
-            component={HomePage}
+            component={ drawer.name == "Sign Out" ? SignOutScreen : HomePage}
             options={{
                 drawerIcon:({focused, size})=> {
                 if (drawer.svgName === 'home') 

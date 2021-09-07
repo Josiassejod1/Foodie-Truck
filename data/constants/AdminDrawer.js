@@ -22,5 +22,8 @@ export default [
     {
         name: 'Settings',
         svgName: 'gear'
+    },
+    {
+        name: 'Sign Out',
     }
 ]
