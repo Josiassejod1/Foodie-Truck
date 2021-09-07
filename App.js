@@ -16,9 +16,19 @@ function StoryBookStart () {
     } else {
         return <StorybookUIRoot/>
     }
-  
+}
+
+
+function AppCaller () {
+    const {isLoadingComplete} = useSystemHook();
+    if (!isLoadingComplete) {
+       return (<AppLoading/>);
+    } else {
+        return <App/>
+    }
 }
 
 
 
-module.exports = __DEV__ ? StoryBookStart : App;
+
+module.exports = false ? StoryBookStart : AppCaller;

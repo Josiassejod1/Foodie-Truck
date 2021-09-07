@@ -63,3 +63,8 @@ buck-out/
 # Expo
 .expo/*
 web-build/
+
+#Firebase 
+GoogleService-Info.plist
+google-services.json
+ ../android/app/google-services.json

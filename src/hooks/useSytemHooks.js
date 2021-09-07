@@ -5,9 +5,6 @@ import * as SplashScreen from "expo-splash-screen"
 import { LogBox } from "react-native"
 import { Asset } from "expo-asset"
 
-// Ignore log notification by message
-LogBox.ignoreLogs(["Error: Native splash screen is already hidden"])
-
 export default function useSystemHook() {
   const [isLoadingComplete, setLoadingComplete] = useState(false)
 
