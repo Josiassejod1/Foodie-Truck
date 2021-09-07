@@ -27,20 +27,29 @@ export default function SignIn({navigation}) {
     }
 
     function signIn() {
-        console.log("Test");
-        console.warn(contextType);
+        console.log("initial sign up");
+        console.warn(contextType.userStore.user);
+        console.log(contextType.sessionStore.authUser);
        auth().signInWithEmailAndPassword(email, password)
-       .then(() => {  navigation.push("HomeScreen")})
-       .catch((e) => Alert.alert(`Incorrect Email or Password: ${e}`));
+       .then(() => {  
+           console.log("success")
+           console.log(contextType.userStore.user);
+           console.log(contextType.sessionStore.auth);
+           navigation.push("HomeScreen")
+           setEmail('') 
+           setPassword('') 
+        })
+       .catch((e) =>{  console.log(e) 
+        Alert.alert(`Incorrect Email or Password:`)});
     }
 
     return(
         <GenericSplashView subtitle="Sign In" style={styles.children}>
              <View style={styles.button}>
-                <StyledTextInput placeholder="Email" placeholderTextColor="#AFAFAF" keyboardType="email-address"  onChangeText={text => setEmail(text)}/>
+                <StyledTextInput placeholder="Email" placeholderTextColor="#AFAFAF" keyboardType="email-address"  onChangeText={text => setEmail(text)} value={email} autoCapitalize = 'none'/>
              </View>
              <View style={styles.button}>
-                <StyledTextInput placeholder="Password" placeholderTextColor="#AFAFAF" secureTextEntry={true} keyboardType="default" onChangeText={text => setPassword(text)} />
+                <StyledTextInput placeholder="Password" placeholderTextColor="#AFAFAF" secureTextEntry={true} keyboardType="default" onChangeText={text => setPassword(text)} value={password} autoCapitalize = 'none' />
              </View>
              <View style={styles.button}>
              </View>
@@ -57,7 +66,7 @@ export default function SignIn({navigation}) {
                 </TouchableOpacity>
              </View>
              <View style={{paddingBottom: 14, alignItems: 'center'}}>
-             <GenericBtn width={341} height={59} borderRadius={10} paddingTop={18} color="#B84343" onPress={signIn}>
+             <GenericBtn key="one" width={341} height={59} borderRadius={10} paddingTop={18} color="#B84343" onPress={signIn}>
                 Sign In
             </GenericBtn>
              </View>

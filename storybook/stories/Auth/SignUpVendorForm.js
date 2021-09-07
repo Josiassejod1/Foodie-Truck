@@ -13,30 +13,38 @@ import { TextInput } from 'react-native-gesture-handler';
 
 
 
-export default function SignUpVendorForm(props, {navigation}) {
+export default function SignUpVendorForm() {
     const [selectedCuisine, setSelectedCuisine] = useState();
 
+    const styles = {
+      children: {
+          left: 0,
+          flex: 1,
+          top: 275,
+          alignItems: 'center'
+      },
+      button: {
+          paddingBottom: 15,
+          alignItems: 'center',
+      }
+  }
     return(
-        <GenericSplashView subtitle="Sign In" style={props.styles.children}>
-           <View>
-           <View style={props.styles.button}>
+        <GenericSplashView subtitle="Sign Up" style={styles.children}>
+           <View style={styles.button}>
                 <StyledTextInput placeholder="Name" placeholderTextColor="#AFAFAF" />
              </View>
-             <View style={props.styles.button}>
+             <View style={styles.button}>
                 <StyledTextInput placeholder="Email" placeholderTextColor="#AFAFAF" keyboardType="email-address"/>
              </View>
-             <View style={props.styles.button}>
+             <View style={styles.button}>
                 <StyledTextInput placeholder="Phone Number" placeholderTextColor="#AFAFAF" keyboardType="phone-pad"/>
              </View>
-             <View style={props.styles.button}>
+             <View style={styles.button}>
                 <StyledTextInput placeholder="Password" placeholderTextColor="#AFAFAF" secureTextEntry={true} />
              </View>
-             <View style={props.styles.button}>
+             <View style={styles.button}>
                 <StyledTextInput placeholder="Repeat Password" placeholderTextColor="#AFAFAF" secureTextEntry={true} />
              </View>
-             <View style={props.styles.button}>
-             </View>
-             //TODO: Replace with React Native Picker Select
              <View style={{borderRadius: 10, borderWidth: 1, borderColor: '#bdc3c7', overflow: 'hidden'}}>
                 <TextInput placeholder="Type of Cuisine" placeholderTextColor="#AFAFAF" render={(props) => (<Picker
                 style={{borderRadius: 10}}
@@ -44,7 +52,7 @@ export default function SignUpVendorForm(props, {navigation}) {
                 itemStyle={{ backgroundColor: "white", color: "#206FCE"}}
                 onValueChange={(itemValue, itemIndex) =>
                     setSelectedCuisine(itemValue)
-                }>{ Cuisine.map((data, index) => { return <Picker.Item label={data} value={data.toLowerCase()} />}) }</Picker>)}/>
+                }>{ Cuisine.map((data, index) => { return <Picker.Item label={data} value={data.toLowerCase() || ""} />}) }</Picker>)}/>
             </View>
              <View  alignItems="center" style={{paddingBottom: 25}}>
                 <RadioButton onPress={() => null } text="I agree to terms & conditions"/>
@@ -56,10 +64,9 @@ export default function SignUpVendorForm(props, {navigation}) {
              </View>
              <View>
                  <View flexDirection="row" alignItems="center"  justifyContent="center" >
-                     <Text style={{color: 'white', fontFamily: 'Encode-Sans',fontWeight: 'bold'}}> Already Have An Account ? </Text>
+                     <Text style={{color: 'white', fontFamily: 'Encode-Sans',fontWeight: 'bold'}}> Already Have An Account ?</Text>
                      <Text style={{color: '#092A53', fontFamily: 'Encode-Sans', fontWeight: 'bold'}}>Sign In</Text>
                  </View>
-             </View>
            </View>
         </GenericSplashView>
     );

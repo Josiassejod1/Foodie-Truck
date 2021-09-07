@@ -27,10 +27,11 @@ export default function Entry() {
 
   useEffect(() => {
     SplashScreen.hide();
+    console.log("auth changed");
     const authUser = auth().onAuthStateChanged(changeAuth);
     store.sessionStore.setAuthUser(authUser);
     return authUser; // unsubscribe on unmount
-  });
+  }, []);
 
     if (initializing) return null;
   return(
@@ -41,8 +42,8 @@ export default function Entry() {
        { (store.userStore.user != null) && <Stack.Screen name="HomeScreen" component={Navbar} options={{ headerShown: false }}/> }
         <Stack.Screen name="SignIn" component={SignIn} options={{ headerShown: false }}/>
         <Stack.Screen name="SignUp" component={SignUp} options={{ headerShown: false }}/>
-        <Stack.Screen name="SignUpConsumer" component={SignUpConsumerForm}options={{ headerShown: false }}/>
-        <Stack.Screen name="SignUpVendor" component={SignUpVendorForm} options={{ headerShown: false }}/>
+        <Stack.Screen name="SignUpVendor" component={SignUpVendorForm} />
+        <Stack.Screen name="SignUpConsumer" component={SignUpConsumerForm}/>
        </Stack.Navigator>
        </NavigationContainer>
        </View>

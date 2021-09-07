@@ -7,8 +7,8 @@ class SessionStore {
         this.rootStore = rootStore;
     }
 
-    @action setAuthUser = authUser => {
-        this.authUser = authUser;
+    @action setAuthUser = (user) => {
+        this.authUser = user;
     }
 }
 

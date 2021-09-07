@@ -5,8 +5,10 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import GenericSplashView from '../GenericSplashView/GenericSplashView';
 import GenericBtn from '../Button/GenericBtn';
+import { useNavigation } from '@react-navigation/native';
 
-export default function SignUp(props, {navigation}) {
+export default function SignUp() {
+    const navigation = useNavigation();
     const styles = {
         children: {
             left: 0,
@@ -33,7 +35,7 @@ export default function SignUp(props, {navigation}) {
             </GenericBtn>
              </View>
              <View style={styles.button}>
-             <GenericBtn width={341} height={59} borderRadius={10} paddingTop={18} color="#092A53" fontWeight={'bold'} onPress={() => avigation.navigate('SignUpVendor')}>
+             <GenericBtn width={341} height={59} borderRadius={10} paddingTop={18} color="#092A53" fontWeight={'bold'} onPress={() => navigation.navigate('SignUpVendor')}>
                 Are you a food truck?
             </GenericBtn>
              </View>
