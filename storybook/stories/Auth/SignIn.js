@@ -58,8 +58,8 @@ export default function SignIn({navigation}) {
                 }}>
                     <Text style={{
                         color: 'white',
-                        fontWeight: 'bold',
-                        fontFamily: 'Encode-Sans'
+                        fontWeight: '800',
+                        fontFamily: 'Poppins'
                     }}>Forgot Password ?</Text>
                 </TouchableOpacity>
              </View>
@@ -71,8 +71,8 @@ export default function SignIn({navigation}) {
              <View>
                  <TouchableOpacity onPress={() => navigation.push("Sign Up Flow")}>
                  <View flexDirection="row" alignItems="center"  justifyContent="center">
-                     <Text style={{color: 'white', fontFamily: 'Encode-Sans',fontWeight: 'bold'}}>Don't Have An Account ? </Text>
-                     <Text style={{color: '#092A53', fontFamily: 'Encode-Sans', fontWeight: 'bold'}}>Sign Up</Text>
+                     <Text style={{color: 'white', fontFamily: 'Poppins',fontWeight: 'bold'}}>Don't Have An Account ? </Text>
+                     <Text style={{color: '#092A53', fontFamily: 'Poppins', fontWeight: 'bold'}}>Sign Up</Text>
                  </View>
                  </TouchableOpacity>
              </View>

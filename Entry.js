@@ -57,10 +57,10 @@ export default function Entry() {
 
   function ConsumerSignUpFlow() {
     return(
-      <SignUpStack.Navigator>
+      <SignUpStack.Navigator  screenOptions={{headerStyle: style.headerStyle, headerTintColor: style.headerTintColor}}>
         <SignUpStack.Screen name="Sign Up" component={SignUp} options={{ headerShown: false }}/>
-        <SignUpStack.Screen name="Vendor" component={SignUpVendorForm} />
-        <SignUpStack.Screen name="Consumer" component={SignUpConsumerForm}/>
+        <SignUpStack.Screen name="Vendor" component={SignUpVendorForm} options={{ title: "" }}/>
+        <SignUpStack.Screen name="Consumer" component={SignUpConsumerForm} options={{ title: "" }}/>
     </SignUpStack.Navigator>
     );
   }
