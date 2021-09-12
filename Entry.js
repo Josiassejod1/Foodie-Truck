@@ -17,13 +17,44 @@ import SignUpVendorForm from './storybook/stories/Auth/SignUpVendorForm';
 export default function Entry() {
   // Set an initializing state whilst Firebase connects
   const [initializing, setInitializing] = useState(true);
-  const Stack = createStackNavigator();
-
+  const AuthScreenStack = createStackNavigator();
+  const HomeScreenStack = createStackNavigator();
+  const SignUpStack = createStackNavigator();
   // Handle user state changes
   function changeAuth(user) {
     store.userStore.setUser(user);
     if (initializing) { setInitializing(false) };
   }
+
+  function AuthScreen() {
+    return (
+      <AuthScreenStack.Navigator>
+        <AuthScreenStack.Screen name="Sign In" component={SignIn} options={{ headerShown: false }}/>
+        <AuthScreenStack.Screen name="Sign Up Flow" component={ConsumerSignUpFlow} options={{ headerShown: false }}/>
+      </AuthScreenStack.Navigator>
+    );
+  }
+
+
+  function HomeScreen() {
+    return (
+      <HomeScreenStack.Navigator>
+        <HomeScreenStack.Screen name="HomeScreen" component={Navbar} options={{ headerShown: false }}/>
+      </HomeScreenStack.Navigator>
+    );
+  }
+
+  function ConsumerSignUpFlow() {
+    return(
+      <SignUpStack.Navigator>
+        <SignUpStack.Screen name="Sign Up" component={SignUp} options={{ headerShown: false }}/>
+        <SignUpStack.Screen name="SignUpVendor" component={SignUpVendorForm} />
+        <SignUpStack.Screen name="SignUpConsumer" component={SignUpConsumerForm}/>
+    </SignUpStack.Navigator>
+    );
+  }
+
+  
 
   useEffect(() => {
     SplashScreen.hide();
@@ -38,13 +69,7 @@ export default function Entry() {
     <StoreContext.Provider value={store}>
        <View style={{flex: 1}}>
        <NavigationContainer>
-        <Stack.Navigator>
-       { (store.userStore.user != null) && <Stack.Screen name="HomeScreen" component={Navbar} options={{ headerShown: false }}/> }
-        <Stack.Screen name="SignIn" component={SignIn} options={{ headerShown: false }}/>
-        <Stack.Screen name="SignUp" component={SignUp} options={{ headerShown: false }}/>
-        <Stack.Screen name="SignUpVendor" component={SignUpVendorForm} />
-        <Stack.Screen name="SignUpConsumer" component={SignUpConsumerForm}/>
-       </Stack.Navigator>
+      { (store.userStore.user != null) ? <HomeScreen/> :  <AuthScreen/>}
        </NavigationContainer>
        </View>
     </StoreContext.Provider>

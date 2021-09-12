@@ -2,13 +2,13 @@
 
 
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import GenericSplashView from '../GenericSplashView/GenericSplashView';
 import GenericBtn from '../Button/GenericBtn';
-import { useNavigation } from '@react-navigation/native';
 
-export default function SignUp() {
-    const navigation = useNavigation();
+
+
+export default function SignUp({navigation}) {
     const styles = {
         children: {
             left: 0,
@@ -22,6 +22,9 @@ export default function SignUp() {
         }
     }
 
+    foodie = React.createRef();
+    vendor = React.createRef();
+
     return(
         <GenericSplashView subtitle="Sign Up" style={styles.children}>
              <View alignItems="center" paddingBottom={35}>
@@ -30,14 +33,22 @@ export default function SignUp() {
                 </Text>
              </View>
              <View style={{paddingBottom: 35, alignItems: 'center'}}>
-            <GenericBtn width={341} height={59} borderRadius={10} paddingTop={18} color="#B84343" fontWeight={'bold'} onPress={() => navigation.navigate('SignUpConsumer')}>
+            <GenericBtn  ref={foodie} width={341} height={59} borderRadius={10} paddingTop={18} color="#B84343" fontWeight={'bold'} onPress={() => navigation.replace("SignUpConsumer")}>
                 Are you a foodie?
             </GenericBtn>
              </View>
              <View style={styles.button}>
-             <GenericBtn width={341} height={59} borderRadius={10} paddingTop={18} color="#092A53" fontWeight={'bold'} onPress={() => navigation.navigate('SignUpVendor')}>
+             <GenericBtn ref={vendor} width={341} height={59} borderRadius={10} paddingTop={18} color="#092A53" fontWeight={'bold'} onPress={() => navigation.replace('SignUpVendor')}>
                 Are you a food truck?
             </GenericBtn>
+             </View>
+             <View>
+                 <TouchableOpacity onPress={() => navigation.goBack()}>
+                 <View flexDirection="row" alignItems="center"  justifyContent="center">
+                     <Text style={{color: 'white', fontFamily: 'Encode-Sans',fontWeight: 'bold'}}>Already Have An Account ? </Text>
+                     <Text style={{color: '#092A53', fontFamily: 'Encode-Sans', fontWeight: 'bold'}}>Sign In</Text>
+                 </View>
+                 </TouchableOpacity>
              </View>
         </GenericSplashView>
     );

@@ -13,7 +13,7 @@ import { TextInput } from 'react-native-gesture-handler';
 
 
 
-export default function SignUpVendorForm() {
+export default function SignUpVendorForm({navigation}) {
     const [selectedCuisine, setSelectedCuisine] = useState();
 
     const styles = {
