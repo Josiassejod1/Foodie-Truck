@@ -27,6 +27,7 @@ export default function useSystemHook() {
           "Poppins-Black": require('../../fonts/Poppins-Black.ttf'),
           "Poppins-Medium": require('../../fonts/Poppins-Medium.ttf'),
           "Avenir": require('../../fonts/Avenir.otf'),
+          "Encode-Sans": require('../../fonts/Encode-Sans.ttf'),
         })
       } catch (e) {
         // We might want to provide this error information to an error reporting service

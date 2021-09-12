@@ -1,7 +1,7 @@
 
 
 
-import React from 'react';
+import React, { useState, useEffect} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import GenericSplashView from '../GenericSplashView/GenericSplashView';
 import GenericBtn from '../Button/GenericBtn';
@@ -20,7 +20,7 @@ export default function SignUp({navigation}) {
             paddingBottom: 15,
             alignItems: 'center',
         }
-    }
+    };
 
     return(
         <GenericSplashView subtitle="Sign Up" style={styles.children}>
@@ -30,12 +30,12 @@ export default function SignUp({navigation}) {
                 </Text>
              </View>
              <View style={{paddingBottom: 35, alignItems: 'center'}}>
-            <GenericBtn  width={341} height={59} borderRadius={10} paddingTop={18} color="#B84343" fontWeight={'bold'} onPress={() => navigation.push("SignUpConsumer")}>
+            <GenericBtn  key={"foodie-btn"} width={341} height={59} borderRadius={10} paddingTop={18} color="#B84343" fontWeight={'bold'} onPress={() => navigation.navigate("Consumer")}>
                 Are you a foodie?
             </GenericBtn>
              </View>
              <View style={styles.button}>
-             <GenericBtn width={341} height={59} borderRadius={10} paddingTop={18} color="#092A53" fontWeight={'bold'} onPress={() => navigation.push("SignUpVendor")}>
+             <GenericBtn key={"vendor-btn"}  width={341} height={59} borderRadius={10} paddingTop={18} color="#092A53" fontWeight={'bold'} onPress={() => navigation.navigate("Vendor")}>
                 Are you a food truck?
             </GenericBtn>
              </View>

@@ -5,6 +5,7 @@ import auth from '@react-native-firebase/auth';
 import SignIn from './storybook/stories/Auth/SignIn';
 import SignUp from './storybook/stories/Auth/SignUp';
 import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Navbar from './storybook/stories/NavBar/Navbar';
 import store from "./data/store/rootStore";
 import { NavigationContainer } from '@react-navigation/native';
@@ -20,21 +21,27 @@ export default function Entry() {
   const AuthScreenStack = createStackNavigator();
   const HomeScreenStack = createStackNavigator();
   const SignUpStack = createStackNavigator();
-  const [auththenticated, setAuthentecated] = useState(false);  
-  const user = store.userStore.user;
-  const authUser = store.sessionStore.authUser;
+  const [authenticated, setAuth] = useState(false);  
+
+  const style = {
+    headerStyle: {
+      backgroundColor: "#206FCE",
+    },
+    headerTintColor: 'white',
+  }
   // Handle user state changes
   function changeAuth(user) {
     store.userStore.setUser(user);
-    setAuthentecated( user != null);
+    setAuth( user != null);
     if (initializing) { setInitializing(false) };
   }
 
   function AuthScreen() {
     return (
-      <AuthScreenStack.Navigator>
+      <AuthScreenStack.Navigator screenOptions={{headerStyle: style.headerStyle, headerTintColor: style.headerTintColor}}>
         <AuthScreenStack.Screen name="Sign In" component={SignIn} options={{ headerShown: false }}/>
-        <AuthScreenStack.Screen name="Sign Up Flow" component={ConsumerSignUpFlow} options={{ headerShown: false }}/>
+        <SignUpStack.Screen name="Sign Up" component={SignUp} options={{ headerShown: false }}/>
+        <SignUpStack.Screen name="Sign Up Flow" component={ConsumerSignUpFlow} options={{ headerShown: false }}/>
       </AuthScreenStack.Navigator>
     );
   }
@@ -52,8 +59,8 @@ export default function Entry() {
     return(
       <SignUpStack.Navigator>
         <SignUpStack.Screen name="Sign Up" component={SignUp} options={{ headerShown: false }}/>
-        <SignUpStack.Screen name="SignUpVendor" component={SignUpVendorForm} />
-        <SignUpStack.Screen name="SignUpConsumer" component={SignUpConsumerForm}/>
+        <SignUpStack.Screen name="Vendor" component={SignUpVendorForm} />
+        <SignUpStack.Screen name="Consumer" component={SignUpConsumerForm}/>
     </SignUpStack.Navigator>
     );
   }
@@ -73,7 +80,7 @@ export default function Entry() {
     <StoreContext.Provider value={store}>
        <View style={{flex: 1}}>
        <NavigationContainer>
-      { auththenticated ? <HomeScreen/> :  <AuthScreen/>}
+      { authenticated ? <HomeScreen/> :  <AuthScreen/>}
        </NavigationContainer>
        </View>
     </StoreContext.Provider>

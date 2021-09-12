@@ -69,7 +69,7 @@ export default function SignIn({navigation}) {
             </GenericBtn>
              </View>
              <View>
-                 <TouchableOpacity onPress={() => navigation.navigate("Sign Up Flow")}>
+                 <TouchableOpacity onPress={() => navigation.push("Sign Up Flow")}>
                  <View flexDirection="row" alignItems="center"  justifyContent="center">
                      <Text style={{color: 'white', fontFamily: 'Encode-Sans',fontWeight: 'bold'}}>Don't Have An Account ? </Text>
                      <Text style={{color: '#092A53', fontFamily: 'Encode-Sans', fontWeight: 'bold'}}>Sign Up</Text>
