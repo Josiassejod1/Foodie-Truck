@@ -22,9 +22,6 @@ export default function SignUp({navigation}) {
         }
     }
 
-    foodie = React.createRef();
-    vendor = React.createRef();
-
     return(
         <GenericSplashView subtitle="Sign Up" style={styles.children}>
              <View alignItems="center" paddingBottom={35}>
@@ -33,12 +30,12 @@ export default function SignUp({navigation}) {
                 </Text>
              </View>
              <View style={{paddingBottom: 35, alignItems: 'center'}}>
-            <GenericBtn  ref={foodie} width={341} height={59} borderRadius={10} paddingTop={18} color="#B84343" fontWeight={'bold'} onPress={() => navigation.replace("SignUpConsumer")}>
+            <GenericBtn  ref={foodie} width={341} height={59} borderRadius={10} paddingTop={18} color="#B84343" fontWeight={'bold'} onPress={() => navigation.push("SignUpConsumer")}>
                 Are you a foodie?
             </GenericBtn>
              </View>
              <View style={styles.button}>
-             <GenericBtn ref={vendor} width={341} height={59} borderRadius={10} paddingTop={18} color="#092A53" fontWeight={'bold'} onPress={() => navigation.replace('SignUpVendor')}>
+             <GenericBtn ref={vendor} width={341} height={59} borderRadius={10} paddingTop={18} color="#092A53" fontWeight={'bold'} onPress={() => navigation.push("SignUpVendor")}>
                 Are you a food truck?
             </GenericBtn>
              </View>

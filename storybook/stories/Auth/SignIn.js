@@ -33,8 +33,6 @@ export default function SignIn({navigation}) {
        auth().signInWithEmailAndPassword(email, password)
        .then(() => {  
            console.log("success")
-           console.log(contextType.userStore.user);
-           console.log(contextType.sessionStore.auth);
            navigation.push("HomeScreen")
            setEmail('') 
            setPassword('') 

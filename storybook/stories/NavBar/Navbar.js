@@ -23,7 +23,7 @@ const Drawer = createDrawerNavigator();
 function SignOutScreen({ navigation }) {
   useEffect(() => {
     auth().signOut();
-    navigation.navigate("SignIn");
+    navigation.push("SignIn");
   });
   return null;
 }
