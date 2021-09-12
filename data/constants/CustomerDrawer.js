@@ -14,5 +14,8 @@ export default [
     {
         name: 'Legal',
         svgName: 'legal'
+    },
+    {
+        name: 'Sign Out',
     }
 ]

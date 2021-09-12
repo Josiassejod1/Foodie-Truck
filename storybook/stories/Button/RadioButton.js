@@ -28,7 +28,7 @@ export default function RadioButton(props) {
       </View>
       </TouchableOpacity>
         <View style={{paddingLeft: 23}}>
-            <Text style={{color: 'white', fontFamily: "Avenir", fontWeight: "800"}}>{props.text}</Text>
+            <Text style={{color: 'white', fontFamily: "Avenir", fontWeight: "800"}}>{props.text || ""}</Text>
         </View>
       
       </View>

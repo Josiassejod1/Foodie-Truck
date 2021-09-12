@@ -4,6 +4,7 @@ import CenterView from '../CenterView';
 import NavBar from './Navbar';
 import MenuTabView from './MenuTabView';
 import OutofStockSwitch from '../Button/OutofStockSwitch';
+import { NavigationContainer } from '@react-navigation/native';
 
 
 const navStory = storiesOf('Navbar Component', module);
@@ -41,7 +42,7 @@ let Items = [
 ];
 
 
-navStory.add('nav bar', () => ( <NavBar isVendor={false}/>));
+navStory.add('nav bar', () => ( <NavigationContainer><NavBar isVendor={false}/></NavigationContainer>));
 navStory.add('tab view (consumer)', () => (<MenuTabView items={Items}/>));
 navStory.add('tab view (admin)', () => (<MenuTabView items={Items} isAdmin={true}/>));
 navStory.add('out of stock switch', () => (<OutofStockSwitch />));

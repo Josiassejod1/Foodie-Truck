@@ -6,7 +6,7 @@ import Logo from '../../../src/assets/images/logo.svg';
 import Donut from '../../../src/assets/images/donut.svg';
 import style from '../CenterView/style';
 export default function GenericSplashView(props) {
-
+	const subtitle = props.subtitle || ""
 	const styles = {
 		container: {
 			backgroundColor: "#206FCE",
@@ -41,13 +41,13 @@ export default function GenericSplashView(props) {
 	}
 
 	return (
-		<ScrollView style={styles.container} snapToStart={false} snapToEnd={false} contentContainerStyle={{marginBottom: 5, flex: 1}}>
+		<ScrollView style={styles.container} bounces={true}  contentContainerStyle={{marginBottom: 5, flex: 1}}>
 			<View style={styles.headerTitle}>
 				<View style={styles.logo}>
 					<Logo />
 				</View>
 				<View style={styles.subtitle}>
-					<StyledText size="subtitle">{props.subtitle}</StyledText>
+					<StyledText size="subtitle">{subtitle}</StyledText>
 				</View>
 			</View>
 			<View style={styles.donut}>

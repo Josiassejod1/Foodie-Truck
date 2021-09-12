@@ -1,10 +1,15 @@
 import React from 'react';
 import { TouchableOpacity, Text } from "react-native";
 import { useFonts, Poppins } from 'expo-font';
+import uuid from 'react-native-uuid';
 
 
 
 export default function GenericBtn(props) {
+    console.log("wtf");
+    let key = props.key || uuid;
+    onPress = props.onPress;
+    console.log("ha");
     let [fontsLoaded] = useFonts({
         "Poppins": require('../../../fonts/Poppins.ttf'),
     });
@@ -20,16 +25,17 @@ export default function GenericBtn(props) {
     }
 
     return (
-        <TouchableOpacity
+        <React.Fragment  key={key}>
+            <TouchableOpacity
             style={{
                 backgroundColor: props.color,
                 width: props.width,
                 height: props.height,
                 borderRadius: props.borderRadius,
                 paddingTop: props.paddingTop
-            }}
-            onPress={() => null}>
+            }} onPress={onPress}>
             <Text style={styles.buttonText}>{props.children}</Text>
         </TouchableOpacity >
+        </React.Fragment>
     )
 }

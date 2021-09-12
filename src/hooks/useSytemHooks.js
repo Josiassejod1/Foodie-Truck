@@ -5,9 +5,6 @@ import * as SplashScreen from "expo-splash-screen"
 import { LogBox } from "react-native"
 import { Asset } from "expo-asset"
 
-// Ignore log notification by message
-LogBox.ignoreLogs(["Error: Native splash screen is already hidden"])
-
 export default function useSystemHook() {
   const [isLoadingComplete, setLoadingComplete] = useState(false)
 
@@ -22,7 +19,7 @@ export default function useSystemHook() {
         /**
          * You can load any font you'd like from a .ttf file placed in assests/fonts/YoUrFoNtHeRe
          */
-       const sheesh =  await Font.loadAsync({
+       await Font.loadAsync({
           Poppins: require('../../fonts/Poppins.ttf'),
           "Poppins-Light": require('../../fonts/Poppins-Light.ttf'),
           "Poppins-Bold": require('../../fonts/Poppins-Bold.ttf'),
@@ -30,8 +27,8 @@ export default function useSystemHook() {
           "Poppins-Black": require('../../fonts/Poppins-Black.ttf'),
           "Poppins-Medium": require('../../fonts/Poppins-Medium.ttf'),
           "Avenir": require('../../fonts/Avenir.otf'),
+          "Encode-Sans": require('../../fonts/Encode-Sans.ttf'),
         })
-        console.warn(sheesh);
       } catch (e) {
         // We might want to provide this error information to an error reporting service
       } finally {
