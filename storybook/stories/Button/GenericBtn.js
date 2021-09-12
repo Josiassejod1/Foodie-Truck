@@ -29,7 +29,7 @@ export default function GenericBtn(props) {
                 borderRadius: props.borderRadius,
                 paddingTop: props.paddingTop
             }}
-            onPress={() => onPress()}>
+            onPress={() => onPress}>
             <Text style={styles.buttonText}>{props.children}</Text>
         </TouchableOpacity >
     )
