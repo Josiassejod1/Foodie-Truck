@@ -50,8 +50,11 @@ export default function SignUpVendorForm({navigation}) {
   }
     return(
         <GenericSplashView subtitle="Sign Up" style={styles.children}>
-           <View style={styles.button}>
-                <StyledTextInput placeholder="Name" placeholderTextColor="#AFAFAF" />
+            <View style={styles.button}>
+                <StyledTextInput placeholder="FirstName" placeholderTextColor="#AFAFAF" />
+             </View>
+             <View style={styles.button}>
+                <StyledTextInput placeholder="LastName" placeholderTextColor="#AFAFAF" />
              </View>
              <View style={styles.button}>
                 <StyledTextInput placeholder="Email" placeholderTextColor="#AFAFAF" keyboardType="email-address"/>

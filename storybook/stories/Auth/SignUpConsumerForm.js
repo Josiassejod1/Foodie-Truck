@@ -1,15 +1,21 @@
 
 
 
-import React from 'react';
-import {View, ScrollView, Text} from 'react-native';
+import React, { useState } from 'react';
+import {View,  Text} from 'react-native';
 import GenericSplashView from '../GenericSplashView/GenericSplashView';
 import StyledTextInput from '../StyledTextInput/StyledTextInput';
-import { FontAwesome } from '@expo/vector-icons';
 import GenericBtn from '../Button/GenericBtn';
 import RadioButton from '../Button/RadioButton';
 
 export default function SignUpConsumerForm() {
+   const [email, setEmail] = useState('');
+   const [firstN, setFirstN] = useState('')
+   const [lastN, setLastN] = useState('')
+   const [password, setPass] = useState('')
+   const [confirm, setConfPass] = useState('') 
+   const [terms, acceptedTerms] = useState(false)
+
    const styles = {
       children: {
           left: 0,
@@ -25,8 +31,11 @@ export default function SignUpConsumerForm() {
     return(
         <GenericSplashView subtitle="Sign In" style={styles.children}>
            <View>
-           <View style={styles.button}>
-                <StyledTextInput placeholder="Name" placeholderTextColor="#AFAFAF" />
+            <View style={styles.button}>
+                <StyledTextInput placeholder="FirstName" placeholderTextColor="#AFAFAF" />
+             </View>
+             <View style={styles.button}>
+                <StyledTextInput placeholder="LastName" placeholderTextColor="#AFAFAF" />
              </View>
              <View style={styles.button}>
                 <StyledTextInput placeholder="Email" placeholderTextColor="#AFAFAF" keyboardType="email-address"/>
