@@ -15,6 +15,7 @@ import PinSVG from '../../../src/assets/images/nav_icons/pin.svg';
 import Header from './Header';
 import auth from '@react-native-firebase/auth';
 import { HomePage } from '../HomePage/HomePage';
+import store from "../../../data/store/rootStore";
 
 
 
@@ -22,8 +23,10 @@ const Drawer = createDrawerNavigator();
 
 function SignOutScreen({ navigation }) {
   useEffect(() => {
+    console.log(store);
     auth().signOut();
-    navigation.push("SignIn");
+    store.userStore.setUser(null);
+    store.sessionStore.setAuthUser(null);
   });
   return null;
 }

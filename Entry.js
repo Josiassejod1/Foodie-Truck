@@ -20,9 +20,13 @@ export default function Entry() {
   const AuthScreenStack = createStackNavigator();
   const HomeScreenStack = createStackNavigator();
   const SignUpStack = createStackNavigator();
+  const [auththenticated, setAuthentecated] = useState(false);  
+  const user = store.userStore.user;
+  const authUser = store.sessionStore.authUser;
   // Handle user state changes
   function changeAuth(user) {
     store.userStore.setUser(user);
+    setAuthentecated( user != null);
     if (initializing) { setInitializing(false) };
   }
 
@@ -69,7 +73,7 @@ export default function Entry() {
     <StoreContext.Provider value={store}>
        <View style={{flex: 1}}>
        <NavigationContainer>
-      { (store.userStore.user != null) ? <HomeScreen/> :  <AuthScreen/>}
+      { auththenticated ? <HomeScreen/> :  <AuthScreen/>}
        </NavigationContainer>
        </View>
     </StoreContext.Provider>
