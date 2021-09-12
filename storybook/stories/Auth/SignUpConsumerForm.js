@@ -50,8 +50,8 @@ export default function SignUpConsumerForm() {
              </View>
              <View>
                  <View flexDirection="row" alignItems="center"  justifyContent="center" >
-                     <Text style={{color: 'white', fontFamily: 'Encode-Sans',fontWeight: 'bold'}}> Already Have An Account ? </Text>
-                     <Text style={{color: '#092A53', fontFamily: 'Encode-Sans', fontWeight: 'bold'}}>Sign In</Text>
+                     <Text style={{color: 'white', fontFamily: 'Poppins',fontWeight: '500'}}> Already Have An Account ? </Text>
+                     <Text style={{color: '#092A53', fontFamily: 'Poppins', fontWeight: '500'}}>Sign In</Text>
                  </View>
              </View>
            </View>

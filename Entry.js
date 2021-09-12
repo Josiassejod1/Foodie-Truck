@@ -1,11 +1,10 @@
 import 'react-native-gesture-handler';
 import React, { useState, useEffect } from 'react';
-import { View, Text } from 'react-native';
+import { View, SafeAreaView } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import SignIn from './storybook/stories/Auth/SignIn';
 import SignUp from './storybook/stories/Auth/SignUp';
 import { createStackNavigator } from '@react-navigation/stack';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Navbar from './storybook/stories/NavBar/Navbar';
 import store from "./data/store/rootStore";
 import { NavigationContainer } from '@react-navigation/native';
@@ -77,12 +76,12 @@ export default function Entry() {
 
     if (initializing) return null;
   return(
-    <StoreContext.Provider value={store}>
+      <StoreContext.Provider value={store}>
        <View style={{flex: 1}}>
        <NavigationContainer>
       { authenticated ? <HomeScreen/> :  <AuthScreen/>}
        </NavigationContainer>
        </View>
-    </StoreContext.Provider>
+      </StoreContext.Provider>
   );
 }

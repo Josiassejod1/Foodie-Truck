@@ -41,7 +41,7 @@ export default function GenericSplashView(props) {
 	}
 
 	return (
-		<ScrollView style={styles.container} snapToStart={false} snapToEnd={false} contentContainerStyle={{marginBottom: 5, flex: 1}}>
+		<ScrollView style={styles.container} bounces={true}  contentContainerStyle={{marginBottom: 5, flex: 1}}>
 			<View style={styles.headerTitle}>
 				<View style={styles.logo}>
 					<Logo />
